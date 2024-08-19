@@ -1,0 +1,817 @@
+{
+  "Common": {
+    "InThisArticle": "IN THIS ARTICLE",
+    "State": "State",
+    "Section": "Section",
+    "Description": "Description",
+    "Note": "Note",
+    "Warning": "Warning",
+    "Feature": "Feature"
+  },
+
+  "CinemachinePackage": {
+    "title": "Cinemachine package",
+    "title.comment": "Cinemachine package's title",
+    "descriptionParagraphOne": "Cinemachine is a suite of modules for controlling the Unity camera. Cinemachine solves the complex mathematics and logic of tracking targets, composing, blending, and cutting between shots. It is designed to significantly reduce the number of time-consuming manual manipulations and script revisions that take place during development.",
+    "descriptionFirstParagraph.comment": "Cinemachine package's first paragraph description",
+    "descriptionParagraphTwo": "The procedural nature of these modules makes Cinemachine robust and forgiving. When you make adjustments - for example, change an animation, vehicle speed, terrain, or other GameObjects in your Scene - Cinemachine dynamically adjusts its behavior to make the best shot. There is no need, for example, to re-write camera scripts just because a character turns left instead of right.",
+    "descriptionSecondParagraph.comment": "Cinemachine package's second paragraph description",
+    "descriptionParagraphThree": "Cinemachine works in real time across all genres including FPS, third person, 2D, side-scroller, top down, and RTS. It supports as many shots in your Scene as you need. Its modular system lets you compose sophisticated behaviors.",
+    "descriptionThirdParagraph.comment": "Cinemachine package's third paragraph description",
+    "descriptionParagraphFour": "Cinemachine works well with other Unity tools, acting as a powerful complement to Timeline, animation, and post-processing assets. Create your own extensions or integrate it with your custom camera scripts.",
+    "descriptionFourthParagraph.comment": "Cinemachine package's fourth paragraph description"
+  },
+
+  "InstallationAndUpgrade": {
+    "title": "Installation and upgrade",
+    "title.comment": "Installation and upgrade section title",
+    "installationParagraphOne": "Cinemachine is a free package, available for any project. You install Cinemachine like any other package.",
+    "installationParagraph.comment": "Installation paragraph",
+    "installationParagraphTwo": "After you install Cinemachine, a new GameObject > Cinemachine menu is available. You can also access this menu when you right-click inside the Hierarchy view.",
+    "installationParagraphTwo.comment": "Installation paragraph two",
+    "requirementsTitle": "Requirements",
+    "requirementsTitle.comment": "Requirements title",
+    "requirementsParagraphOne": "Cinemachine has few external dependencies. Just install it and start using it. If you are also using the Post Processing via HDRP or URP volumes, then adapter modules are provided - protected by ifdef directives which auto-define if the presence of the dependencies is detected.",
+    "requirementsParagraphOne.comment": "Requirements paragraph one",
+    "requirementsParagraphTwo": "There are similar ifdef-protected behaviours for other packages, such as Timeline and UGUI.",
+    "requirementsParagraphTwo.comment": "Requirements paragraph two",
+    "requirementsParagraphThree": "This version of Cinemachine is supported by the following versions of the Unity Editor:：",
+    "requirementsParagraphThree.comment": "Requirements paragraph three",
+    "requirementVersion": "2022.2.16f1 and later",
+    "requirementVersion.comment": "Requirement version",
+    "upgradingTitle": "Upgrading from previous versions of Cinemachine",
+    "upgradingTitle.comment": "Upgrading title",
+    "upgradingParagraphOne": "Cinemachine 3.0 is a major version change from CM 2.X, and the API and data format have changed significantly. Scripts written for the CM 2.X API are unlikely to run with 3.X without manual intervention. Also, the CM Camera instances in your project will themselves need upgrading.",
+    "upgradingParagraphOne.comment": "Upgrading paragraph one",
+    "upgradingParagraphTwo": "While it is possible to upgrade an existing project from CM 2.X, you should think carefully about whether you are willing to put in the work. It might be better in many cases just to stick with CM 2.X, which will continue to be supported for a while in parallel with CM 3.X. If you do choose to upgrade your project, please see the upgrade guide.",
+    "upgradingParagraphTwo.comment": "Upgrading paragraph two",
+    "upgradingParagraphThree": "Cinemachine 3.0 maintains support - in deprecated form - of obsolete CM2 classes that have been superceded by newer ones. This is to help ease the transition to the new API. However, it is strongly recommended that you upgrade your project to use the new API as soon as possible. The deprecated classes will be removed in a future release. To reduce code bloat in your deliverables, the deprecated class support can be removed immediately by defining CINEMACHINE_NO_CM2_SUPPORT in your project's Scripting Define Symbols.",
+    "upgradingParagraphThree.comment": "Upgrading paragraph three",
+    "upgradingFromOldTitle": "Upgrading from the old Asset Store version of Cinemachine",
+    "upgradingFromOldTitle.comment": "Upgrading from old title",
+    "upgradingFromOldParagraphOne": "If you already installed a very old version of Cinemachine from the Unity Asset Store, you should upgrade to the Cinemachine Package. It is recommended in this case to upgrade to Cinemachine 2.X, which in most cases is completely automatic.",
+    "upgradingFromOldParagraphOne.comment": "Upgrading from old paragraph one",
+    "upgradingFromOldParagraphTwo": "To upgrade to the Cinemachine Package:",
+    "upgradingFromOldParagraphTwo.comment": "Upgrading from old paragraph two",
+    "upgradingFromOldSteps": [
+      "In Unity Editor, 2019.4+ or later, open your project.",
+      "Save the current Scene you are working on.",
+      "Create a new, empty Scene.",
+      "In the Project window, delete the Cinemachine Asset and any CinemachinePostProcessing adaptor assets you may have installed.",
+      "Install the Cinemachine 2.X package."
+    ],
+    "upgradingFromOldSteps.comment": "Upgrading from old Asset stores steps"
+  },
+
+  "UpgradingProjectFromCinemachine2X": {
+    "UpgradingProjectFromCinemachine2XTitle": "Upgrading a Project from Cinemachine 2.X",
+    "UpgradingProjectFromCinemachine2XParagraphOne": "Cinemachine 3.0 is a major version change from CM 2.X, and the API and data format have changed significantly. Scripts written for the CM 2.X API are unlikely to run with 3.X without manual intervention. Also, the CM objects in your project data will themselves need upgrading.",
+    "UpgradingProjectFromCinemachine2XParagraphTwo": "While it is possible to upgrade an existing project from CM 2.X, you should think carefully about whether you are willing to put in the work. It might be better in many cases just to stick with CM 2.X, which will continue to be supported for a while in parallel with CM 3.X. If you do choose to consider upgrading your project, this guide will give you some pointers to make the process smoother.",
+
+    "UpgradingYourProjectStepByStepTitle": "Upgrading your Project Step by Step",
+    "UpgradingYourProjectStepByStepParagraphOne": "Here are the steps to take when upgrading an existing project from CM 2.X:",
+    "UpgradingYourProjectStepByStepList": [
+      "Back up your project. Don't skip this step.",
+      "Use the Package Manager to upgrade your project to CM3. If you have custom scripts that use the Cinemachine API, they will likely break. Get them compiling again by doing the following:",
+      "1 Update the using Cinemachine declarations. The namespaces have been changed to Unity.Cinemachine.",
+      "2 Update any references to the renamed components.",
+      "3 Update the broken CM field names. For the most part, this just means removing the m_ prefix. In other cases, there might be a bit more to do, but the appropriate action to take should be clear by looking at the code in each case.",
+      "4 At this point your project should more-or-less run as before, using the obsolete classes.",
+      "The new CinemachineCamera class that replaces CinemachineVirtualCamera and CinemachineFreeLook inherits from CinemachineVirtualCameraBase. Where possible, replace your script references to use this base class rather than the derived type. If you do this, the CM upgrader tool will be able to preserve existing object references, since the old and new classes all inherit from this same base class.",
+      "Upgrade the project data by running the Cinemachine Upgrader. You can launch the Cinemachine Upgrader tool from any CM VirtualCamera or FreeLook inspector.",
+      "Because CM component types have changed, you will have to manually go through your scripts and update any specific references to be to the new type. The console log is your friend: \"obsolete\" warnings will point you to the places that need attention.",
+      "After the data upgrade, object references might be broken. You will need to check and repair them if necessary.",
+      "If you are using layers to filter cameras into separate split-screen brains, that filtering will stop working until after you have upgraded to CinemachineCameras and switched the filtering over to Channels."
+    ],
+    "UpgradingYourProjectStepByStepParagraphTwo": "Note: if at any stage you get errors of this nature, just restart Unity:",
+    "WhatHasChangedInTheAPITitle": "What has Changed in the API",
+    "WhatHasChangedInTheAPIParagraphOne": "Some components were replaced by new components, others were renamed. Field names have changed. Namespaces have changed. For most of these issues, you will see errors or deprecation warnings in the console, which will point you to the areas in your code that need attention.",
+    "WhatHasChangedInTheAPIParagraphTwo": "One thing to note: the new CinemachineCamera class that replaces CinemachineVirtualCamera and CinemachineFreeLook inherits from CinemachineVirtualCameraBase. If you can replace your script references to use this base class wherever possible, then existing object references will be preserved when the data is upgraded, since the old classes are also inherited from this same base class.",
+    "NewNamespacesTitle": "New Namespaces",
+    "NewNamespacesParagraphOne": "Namespaces have changed to be more consistent with Unity standards.",
+    "NewNamespacesList": [
+      "Cinemachine is now Unity.Cinemachine",
+      "Cinemachine.Editor is now Unity.Cinemachine.Editor",
+      "Cinemachine.Utility has been folded into Unity.Cinemachine."
+    ],
+    "NewComponentsWithClearerNamesTitle": "New Components with Clearer Names",
+    "NewComponentsWithClearerNamesParagraphOne": "Old components have been replaced by new components. These are not renames, they are new component types. The old components still exist but are deprecated. If your scripts refer to any of them, they will need to be updated once the data upgrade has been done.",
+    "NewComponentsWithClearerNamesList": [
+      "CinemachineVirtualCamera is replaced by CinemachineCamera.",
+      "CinemachineFreeLook is replaced by CinemachineCamera.",
+      "CinemachinePath and CinemachineSmoothPath are replaced by Spline Container, provided by Unity's new native spline implementation.",
+      "CinemachineDollyCart is replaced by CinemachineSplineCart.",
+      "CinemachineTransposer is replaced by CinemachineFollow.",
+      "CinemachineOrbitalTransposer is replaced by CinemachineOrbitalFollow",
+      "CinemachineFramingTransposer is replaced by CinemachinePositionComposer.",
+      "CinemachineComposer is replaced by CinemachineRotationComposer.",
+      "CinemachinePOV is replaced by CinemachinePanTilt.",
+      "CinemachineTrackedDolly is replaced by CinemachineSplineDolly.",
+      "CinemachineGroupComposer is replaced by the CinemachineGroupFraming extension used in conjunction with CinemachineRotationComposer.",
+      "CinemachineCollider is replaced by CinemachineDeoccluder",
+      "CinemachineConfiner is replaced by CinemachineConfiner2D and CinemachineConfiner3D",
+      "Cinemachine3rdPersonFollow is replaced by CinemachineThirdPersonFollow.",
+      "CinemachineSameAsFollowTarget is replaced by CinemachineRotateWithFollowTarget."
+    ],
+    "RenamedComponentsTitle": "Renamed Components",
+    "RenamedComponentsList": [
+      "Cinemachine3rdPersonAim has been renamed to CinemachineThirdPersonAim.",
+      "CinemachineBlendListCamera has been renamed to Cinemachine Sequencer Camera."
+    ],
+    "RenamedFieldsTitle": "Renamed Fields",
+    "RenamedFieldsParagraphOne": "The old convention of using \"m_FieldName\" has been changed to follow Unity's latest naming conventions. Consequently, all of the \"m_\" prefixes have been removed from field names, everywhere. If your scripts don't compile because of this, the first remedy is to remove the \"m_\" from the field name that your script is referencing. Most of the time, that will be enough. Occasionally, some field names were changed more significantly. It should be fairly easy to find the appropriate replacements.",
+    "RenamedFieldsParagraphTwo": "The SimpleFollowWithWorldUp binding mode has been renamed to LazyFollow.",
+    "CleanerObjectStructureNoHiddenGameObjectsTitle": "Cleaner Object Structure, No Hidden GameObjects",
+    "CleanerObjectStructureNoHiddenGameObjectsParagraphOne": "Cinemachine 2.x implemented the CM pipeline on a hidden GameObject child of the vcam, named \"cm\". This has been removed in CM 3.0, and CM pipeline components (such as OrbitalFollow or RotationComposer) are now implemented directly as components on the CinemachineCamera GameObject. You can access them as you would any other components: GetCinemcachineComponent() is no longer necessary, just use GetComponent().",
+    "CleanerObjectStructureNoHiddenGameObjectsParagraphTwo": "You will now see the cm child objects of your legacy CM vcams in the hierarchy, because CM3 unhides them. This is not a license to mess with these objects - they were hidden for a reason. We recommend that you get rid of them by upgrading the parent objects to their CM3 equivalents.",
+
+    "NewInputHandlingTitle": "New Input Handling",
+    "NewInputHandlingParagraphOne": "User input has been decoupled from the Cinemachine Components: they no longer directly read user input, but expect to be driven by an external component. CinemachineInputAxisController is provided to do this job, but you could also choose to implement your own input controller by inheriting InputAxisControllerBase.",
+
+    "NewEventsArchitectureTitle": "New Events Architecture",
+    "NewEventsArchitectureParagraphOne": "While CM2.X has events in CinemachineVirtualCamera and CinemachineBrain, CM3 only fires global events via CinemachineCore. Scripts can add listeners to those events and take action based on them. Listeners will receive events for all cameras and all Brains.",
+    "NewEventsArchitectureParagraphTwo": "Camera-specific and Brain-specific events are now supported via two new behaviours: Cinemachine Brain Events and Cinemachine Camera Events. These monitor the global events and fire more specialized ones related to the objects to which they are attached.",
+
+    "NewSplineImplementationTitle": "New Spline Implementation",
+    "NewSplineImplementationParagraphOne": "Cinemachine's paths are now implemented using Unity's native Splines, which provide equivalent functionality. The Cinemachine Upgrader will automatically convert your CM paths to Splines. The CM path implementations still exist, but are now deprecated.",
+
+    "DecoupledFromUnityLayersTitle": "Decoupled from Unity Layers",
+    "DecoupledFromUnityLayersParagraphOne": "In CM2, CinemachineBrain would only process CinemachineCameras that were assigned to layers included in the associated Camera's culling mask. This mechanism was useful in situations such as split-screen, to cause specific CinemachineCameras to be assigned to specific Brains. In CM3, this has been replaced by Cinemachine Channels. These are dedicated layers that only Cinemachine uses, so that Unity layers don't get needlessly squandered. CinemachineCameras are assigned to a Cinemachine Channel, and the CinemachineBrain has a channel mask. Normally, the \"Default\" channel is used, and only needs to be changed in specific situations where channel separation is a requirement.",
+
+    "LensModeOverrideTitle": "Lens Mode Override",
+    "LensModeOverrideParagraphOne": "If your project is using virtual cameras with a Lens Mode Override (e.g. changing between physical and perspective and ortho cameras), then this will stop working until you enable mode override and assign a default lens mode in the CinemachineBrain.",
+
+    "UpgradingTheProjectDataTitle": "Upgrading the Project Data",
+    "UpgradingTheProjectDataParagraphOne": "Once the scripts are using the new API, you can upgrade the project data to convert legacy CM objects to their CM3 counterparts. Cinemachine comes with a data upgrade tool to facilitate this. It's not a trivial operation, because in addition to the vcam objects in your scene, it's also necessary to upgrade prefabs and animation assets that might be referencing them.",
+    "UpgradingTheProjectDataParagraphTwo": "You can launch the Cinemachine Upgrader upgrade tool from any CM VirtualCamera or FreeLook inspector:",
+
+    "UpgradingASingleObjectTitle": "Upgrading a Single Object",
+    "UpgradingASingleObjectParagraphOne": "If you want to upgrade only the Cinemachine object currently being inspected, you can do this provided that it isn't a prefab instance. In this case, it will upgrade only the inspected objects, replacing them with CM3 equivalents. Undo is supported, so you can try it out and then change your mind if you want.",
+    "UpgradingASingleObjectParagraphTwo": "Note that any script references to this object will be lost (because the class will change), as will any animation tracks that are writing to fields inside this camera (because classes and field names have changed). Timelines referencing this object will lose their bindings. If you have script references or animation tracks or if this camera is part of a prefab or prefab instance, then you need to use the \"Upgrade Entire Project\" option, which will scan the project for references and make the appropriate updates.",
+
+    "UpgradingASingleSceneTitle": "Upgrading a Single Scene",
+    "UpgradingASingleSceneParagraphOne": "You can also choose to update all the CM objects in the current scene. Again, this will not update any assets outside of the scene, so it is not appropriate for any but the simplest of scenes. Undo is also supported for this operation.",
+
+    "UpgradingTheWholeProjectTitle": "Upgrading the Whole Project",
+    "UpgradingTheWholeProjectParagraphOne": "The \"Upgrade Entire Project\" option will upgrade all the objects in all the scenes and all the prefabs. There is logic to handle animation tracks, script references, and prefab instances. It's a major operation and every scene and prefab in the project will be opened and saved multiple times. Undo is not supported, so be sure to make a complete backup first."
+  },
+  "GetStarted": {
+    "title": "Get started with Cinemachine",
+    "paragraphOne": "Get the essential information to understand how Cinemachine works and follow instructions to set up the minimum functional layers to start using Cinemachine in your project.",
+    "sections:": [
+      "Cinemachine core concepts",
+      "Set up a basic Cinemachine environment",
+      "Set up multiple Cinemachine Cameras and transitions",
+      "Add procedural behavior to a Cinemachine Camera",
+      "Set up Timeline with Cinemachine Cameras",
+      "Use convenient tools and shortcuts"
+    ],
+    "descriptions": [
+      "Learn about the Cinemachine base elements and core functionality.",
+      "Set up your Unity project with the minimum required elements to make a functional Cinemachine environment.",
+      "Set up a Cinemachine environment with multiple Cinemachine Cameras and manage the transitions between them.",
+      "Add procedural behavior to a Cinemachine Camera to make it follow a target, shake, and more.",
+      "Set up Timeline in a Cinemachine environment to choreograph Cinemachine Cameras and produce a predictable shot sequence.",
+      "Use interface tools and shortcuts and target the proper Cinemachine elements to set up according to your needs and ease your configuration experience."
+    ]
+  },
+  "DiscoverConcepts": {
+    "title": "Discover Cinemachine concepts",
+    "paragraphOne": "Learn about the Cinemachine base elements and core functionality.",
+    "sections": [
+      "Cinemachine essential elements",
+      "Camera control and transitions",
+      "Procedural motion",
+      "Cinemachine and Timeline"
+    ],
+    "descriptions": [
+      "What are the essential elements that to make a functional Cinemachine environment: Unity Camera, Cinemachine Brain, and Cinemachine Cameras.",
+      "What are the conditions and mechanisms that make Cinemachine Cameras take turns controlling the Unity Camera and transition between each other by blend or cut.",
+      "How procedural behaviors and extensions can make a Cinemachine Camera dynamically move, shake, track targets, compose its own shots, respond to user inputs, move along a predefined path, react to external impulse signals, produce post-processing effects, and more.",
+      "How Cinemachine Cameras work with Timeline when you need to produce a predictable shot sequence with choreographed cameras."
+    ]
+  },
+  "EssentialElements": {
+    "title": "Cinemachine essential elements",
+    "paragraphOne": "Learn about the essential elements that make a functional Cinemachine environment.",
+    "subtitleOne": "Overview",
+    "paragraphTwo": "A functional Cinemachine setup involves three main types of elements:",
+    "listOne": [
+      "A single Unity Camera which captures the images across the Scene,",
+      "A Cinemachine Brain which enables the Cinemachine functionality in the Unity Camera, and",
+      "One or multiple Cinemachine Cameras which take turns controlling the Unity Camera according to their status."
+    ],
+    "paragraphThree": "Cinemachine setup example: the Unity Camera with its Cinemachine Brain component and three Cinemachine Cameras.",
+    "subtitleTwo": "Unity Camera",
+    "paragraphFour": "The Unity Camera is a GameObject that includes a Camera component, as opposed to Cinemachine Cameras, which includes other types of components to control the Unity Camera.",
+    "paragraphFive": "A Cinemachine setup must include only one Unity Camera, which is then the only GameObject that captures the images from your Scene while the Cinemachine Cameras control it.",
+    "subtitleThree": "Cinemachine Brain",
+    "paragraphSix": "To work with Cinemachine, the Unity Camera GameObject must include a Cinemachine Brain component. This component is mainly responsible to:",
+    "listTwo": [
+      "Monitor all active Cinemachine Cameras in the Scene.",
+      "Determine which Cinemachine Camera controls the Unity Camera.",
+      "Handle the transition when another Cinemachine Camera takes control of the Unity Camera."
+    ],
+    "noteOne": "When you use Timeline to get a choreographed sequence of Cinemachine Camera shots, Timeline overrides the Cinemachine Brain for Cinemachine Camera priority and transition management.",
+    "subtitleFour": "Cinemachine Cameras",
+    "paragraphSeven": "The Cinemachine Cameras (formerly named Virtual Cameras) are GameObjects that act as camera placeholders ready to take control of the Unity Camera according to their status.",
+    "paragraphEight": "When a Cinemachine Cameras takes control of the Unity Camera, it dynamically overrides its properties and behavior, which affects:",
+    "listThree": [
+      "Where the Unity Camera is positioned in the Scene.",
+      "What the Unity Camera aims at.",
+      "How the Unity Camera behaves through time."
+    ],
+    "subtitleFive": "Cinemachine Camera GameObjects",
+    "paragraphNine": "Cinemachine Camera GameObjects are separate from the Unity Camera GameObject.",
+    "listFour": [
+      "They behave independently, and must not be nested within each other.",
+      "They don't include a Camera component, as opposed to the Unity Camera GameObject.",
+      "They must include a Cinemachine Camera component.",
+      "They can include additional Cinemachine components to manage procedural motion and add extended functionality."
+    ],
+    "paragraphTen": "Hierarchy example: a Scene containing a Unity Camera with Cinemachine Brain and multiple Cinemachine Cameras.",
+    "subtitleSix": "Single or multiple Cinemachine Cameras",
+    "paragraphEleven": "You can create as many Cinemachine Cameras as required for your project, but you can also get a fully functional setup with a single Cinemachine Camera, depending on your needs. For example:",
+    "listFive": [
+      "If you want the Unity Camera to follow a single character, you can use a single Cinemachine Camera and set it up with a follow behavior that corresponds to your needs. In the end, this Cinemachine Camera will be the only one to control the Unity Camera.",
+      "If your project requires multiple shots over multiple places, you should create one Cinemachine Camera per shot, with or without specific procedural behavior. In that case, you have to understand how Unity handles Cinemachine Camera activations and transitions."
+    ],
+    "subtitleSeven": "Processing power consumption",
+    "paragraphTwelve": "Cinemachine encourages you to create many Cinemachine Cameras. The Cinemachine Camera is designed to consume little processing power. If your Scene is performance-sensitive, deactivate all but the essential Cinemachine Cameras at any given moment for best performance.",
+    "subtitleEight": "Additional resources",
+    "paragraphThirteen": "Set up a basic Cinemachine environment"
+  },
+  "ControlAndTransations": {
+    "title": "Camera control and transitions",
+    "paragraphOne": "Learn about the conditions and mechanisms that make Cinemachine Cameras take turns controlling the Unity Camera and transition between each other by blend or cut.",
+    "subtitleOne": "Cinemachine Camera states",
+    "paragraphTwo": "At any time, each Cinemachine Camera may be in one of three different states, but only one is Live and controls the Unity Camera at a time, except when a blend occurs.",
+    "states": ["Live", "Standby", "Disabled"],
+    "descriptions": [
+      "The Cinemachine Camera actively controls a Unity Camera that has a Cinemachine Brain. When a blend occurs from one Cinemachine Camera to the next, both Cinemachine Cameras are live. When the blend is complete, there is only one live Cinemachine Camera.",
+      "The Cinemachine Camera doesn’t control the Unity camera. However, it still follows and aims at its targets, and updates. A Cinemachine Camera in this state has its GameObject activated and a priority that is the same as or lower than the live Cinemachine Camera.",
+      "The Cinemachine Camera doesn’t control the Unity camera and doesn’t actively follow or aim at its targets. A Cinemachine Camera in this state doesn’t consume processing power. To disable a Cinemachine Camera, deactivate its GameObject. The Cinemachine Camera is present but disabled in the Scene. However, even though the GameObject is deactivated, the Cinemachine Camera can still control the Unity camera if the Cinemachine Camera is participating in a blend, or if Timeline invokes it."
+    ],
+    "subtitleTwo": "Live Cinemachine Camera selection",
+    "paragraphThree": "The conditions that make a Cinemachine Camera the live one depend on the context in which you're using Cinemachine. By default, the Cinemachine Brain is responsible for handling the live Cinemachine Camera selection.",
+    "listOne": [
+      "The Brain chooses the active Cinemachine Camera component with the highest Priority and makes it Live.",
+      "If multiple active CinemchineCameras share the same highest priority, then the ost recently activated of them will be chosen.",
+      "Deactivated or lower-priority CinemachineCameras can be Live if they are part of a blend, until the blend is finished.",
+      "If a Timeline is active with Cinemachine tracks, it overrides the Brain's priority system and drives the Live cameras and blends explicitly, regardless of their Priority and active state."
+    ],
+    "subtitleThree": "Realtime dynamic events",
+    "paragraphFour": "You can respond to dynamic game events in real time by manipulating Cinemachine Camera priorities or by activating and deactivating their GameObjects. This is particularly useful for live gameplay, where action isn’t always predictable.",
+    "subtitleFour": "Timeline",
+    "paragraphFive": "Use Cinemachine with Timeline to choreograph Cinemachine Cameras and manage shots in predictable situations, like cutscenes.",
+    "paragraphSix": "When you use Timeline with Cinemachine Cameras, Timeline overrides the Cinemachine Brain priority system, meaning that the Priority and active state of the Cinemachine Cameras is ignored when a Cinemachine Camera Clip is active. The live Cinemachine Camera selection is based on the activation of specific Cinemachine Camera clips that give you precise, to-the-frame camera control.",
+    "subtitleFive": "Cinemachine Camera transitions",
+    "paragraphSeven": "You can manage transitions between Cinemachine Cameras each time a new one becomes live.",
+    "paragraphEight": "The ways to set up Cinemachine Camera transitions are different depending on the context you're using Cinemachine in:",
+    "listTwo": [
+      "By default, you handle transition rules in the Cinemachine Brain component.",
+      "When you're using Timeline for shot sequencing, you handle transitions directly in the Timeline Cinemachine track."
+    ],
+    "subtitleSix": "Blends",
+    "paragraphNine": "Blends allow you to create sophisticated camera motion by combining relatively simple shots and blending between them in response to real-time game events or in a choreographed way via a timeline.",
+    "paragraphTen": "A Cinemachine blend is not a fade, wipe, or dissolve. Rather, Cinemachine performs a smooth animation of the position, rotation, and other settings of the Unity Camera from one Cinemachine Camera to the next, taking care to preserve the view of the target object, and to respect the Up direction.",
+    "paragraphEleven": "Blend: The two Cinemachine Cameras simultaneously control the Unity Camera during the blend, smoothly exchanging full control over a predetermined time.",
+    "subtitleSeven": "Cuts",
+    "paragraphTwelve": "By definition, a cut is an abrupt transition from a shot to another. In Cinemachine, a cut between two Cinemachine Cameras corresponds to a blend that occurs instantly, without smooth transition between Cinemachine Camera properties.",
+    "paragraphThirteen": "Cut example: two Cinemachine Cameras taking turns controlling the Unity Camera instantly.",
+    "subtitleEight": "Additional resources",
+    "paragraphFourteen": "Set up multiple Cinemachine Cameras and transitions"
+  },
+  "ProceduralMotion": {
+    "title": "Procedural Motion",
+    "paragraphOne": "On its own, a Cinemachine Camera is a passive GameObject that acts as a camera placeholder that you can, for example:",
+    "listOne": [
+      "Place in a fixed location with a static aim.",
+      "Parent to another GameObject to make it move and rotate along with it.",
+      "Manipulate via a custom script to move and rotate it and control its lens."
+    ],
+    "paragraphTwo": "However, for more sophisticated results, you can add procedural behaviors and extensions to any Cinemachine Camera to make it dynamically move, shake, track targets, compose its own shots, respond to user inputs, move along a predefined path, react to external impulse signals, produce post-processing effects, and more.",
+    "subtitleOne": "Procedural behaviors and extensions",
+    "paragraphThree": "The Cinemachine Camera component allows you to select a variety of behaviors and extensions to drive the Cinemachine Camera's position, rotation, and lens.",
+    "subtitleOneOne": "Position and Rotation Control",
+    "paragraphFour": "Select and configure Position Control and Rotation Control behaviors to make the Cinemachine Camera move and aim the Unity Camera according to some constraints or criteria.",
+    "paragraphFive": "Most of the available behaviors are designed to track or look at a target GameObject. Additionally, some behaviors support user input to orbit or rotate the camera.",
+    "paragraphSix": "With these behaviors, you can:",
+    "listTwo": [
+      "Follow a target with a fixed offset, in orbital configuration, or as a third or first person.",
+      "Compose shots with adaptive camera position and rotation, or centered hard look, to keep the target in the camera frame.",
+      "Apply the target's position and rotation to the camera instead of having the target in the camera frame.",
+      "Move the camera along a predefined Spline to simulate a dolly camera path.",
+      "Rotate the camera around configurable pan and tilt axes."
+    ],
+    "subtitleOneTwo": "Noise",
+    "paragraphSeven": "Select and configure a Noise behavior to make the Cinemachine Camera shake and simulate real-world physical camera qualities for cinematic effect.",
+    "paragraphEight": "At each frame update, Cinemachine adds noise separately from the movement of the camera to follow a target. Noise does not influence the camera’s position in future frames. This separation ensures that properties like damping behave as expected.",
+    "subtitleOneThree": "Extensions",
+    "paragraphNine": "Add an Extension to augment the behavior of a Cinemachine Camera for more specific or advanced needs.",
+    "paragraphTen": "For example, the Deoccluder extension moves a camera out of the way of GameObjects that obstruct the camera’s view of its target.",
+    "paragraphEleven": "Here is the list of all available Cinemachine Camera Extensions:",
+    "listThree": [
+      "Cinemachine Auto Focus",
+      "Cinemachine Confiner 3D",
+      "Cinemachine Confiner 2D",
+      "Cinemachine Decollider",
+      "Cinemachine Deoccluder",
+      "Cinemachine Follow Zoom",
+      "Cinemachine FreeLook Modifier",
+      "Cinemachine Group Framing",
+      "Cinemachine Pixel Perfect",
+      "Cinemachine Post Processing",
+      "Cinemachine Recomposer",
+      "Cinemachine Shot Quality Evaluator",
+      "Cinemachine Storyboard",
+      "Cinemachine Third Person Aim",
+      "Cinemachine Volume Settings"
+    ],
+    "subtitleTwo": "Target GameObject tracking",
+    "paragraphTwelve": "Target GameObject tracking is a key element in defining procedural motion. Offsets and screen compositions are specified in relation to these targets, so as the targets move around in the world, the cameras adjust themselves to keep the shot.",
+    "subtitleTwoOne": "Tracking Target and Look At Target properties",
+    "paragraphThirteen": "By default, a Cinemachine Camera has a single Tracking Target property, which serves two purposes:",
+    "listFour": [
+      "It specifies a Transform for the Cinemachine Camera to move with when you define a position control behavior that requires it.",
+      "It specifies the LookAt target, which is the Transform to aim at when you define a rotation control behavior that requires it."
+    ],
+    "noteOne": "If you need to use two different Transforms for these purposes, select Use Separate LookAt Target option via the button at the right of the Tracking Target field.",
+    "subtitleTwoTwo": "Target tracking and blends",
+    "paragraphFourteen": "The target is also relevant when Cinemachine performs blends between shots. Cinemachine attempts to maintain the shot's desired screen position for the target, and if the target changes between shots, Cinemachine performs an interpolation between the targets' positions.",
+    "paragraphFifteen": "If no target is specified for a camera blend, then Cinemachine can only interpolate the position and rotation independently, which often results in the object of interest moving around on the screen in undesirable ways. If Cinemachine knows what is the object of interest, it can correct that problem.",
+    "subtitleThree": "Behavior and extension selection",
+    "paragraphSixteen": "When you select behaviors or add extensions from the Cinemachine Camera component, Unity automatically adds extra components to the Cinemachine Camera GameObject. To modify the Cinemachine Camera behavior, you must then edit the properties of these additional components.",
+    "noteTwo": "You can get the same result by adding these components manually as any other GameObject component.",
+    "paragraphSeventeen": "If no procedural components are present, the Cinemachine Camera controls the Unity Camera position and rotation by its Transform.",
+    "subtitleThreeOne": "Custom behaviors and extensions",
+    "paragraphEighteen": "You can write custom scripts inheriting the CinemachineComponentBase or CinemachineExtension class to implement your own custom moving behaviors or extensions. When you create such a behavior or extension, it becomes automatically available for selection among the existing ones.",
+    "subtitleFour": "Additional resources",
+    "paragraphNineteen": "Add procedural behavior to a Cinemachine Camera"
+  },
+  "CinemachineAndTimeline": {
+    "title": "Cinemachine and Timeline",
+    "paragraphOne": "Use Timeline to activate, deactivate, and blend between CinemachineCameras when you need to produce a predictable shot sequence with choreographed cameras.",
+    "paragraphTwo": "Tip: For simple shot sequences, you can also use a Cinemachine Sequencer Camera instead of Timeline.",
+    "subtitleOne": "Live Cinemachine Camera selection",
+    "paragraphThree": "When Timeline drives Cinemachine, it overrides the priority-based decisions made by the Cinemachine Brain. When the Timeline finishes, or at least when Timeline is not currently driving Cinemachine, the control returns to the Cinemachine Brain.",
+    "subtitleTwo": "Cinemachine Track and Shot Clips",
+    "paragraphFour": "Timeline controls Cinemachine Cameras via Cinemachine Shot Clips in a Cinemachine Track. Each shot clip points to a CinemachineCamera to activate and then deactivate. Use a sequence of shot clips to specify the order and duration of each shot.",
+    "subtitleThree": "Cinemachine Camera transitions",
+    "paragraphFive": "To cut between two CinemachineCameras, place the clips next to each other.",
+    "paragraphSix": "To blend between two CinemachineCameras, overlap the clips.",
+    "paragraphSeven": "Example: Cinemachine Shot Clips in Timeline, with a cut between Shots A-B and a blend between Shots B-C.",
+    "subtitleFour": "Multiple Cinemachine Tracks",
+    "paragraphEight": "You can have multiple Cinemachine Tracks in the same Timeline. The tracks lower down in the Timeline override any tracks higher up.",
+    "paragraphNine": "By having a shot on a lower track become active while a higher-up CinemachineShot clip is active, you can interrupt the shot with another one.",
+    "paragraphTen": "It's also possible to have multiple Timelines with Cinemachine tracks. In this case, the Timeline that was most recently activated overrides the others, with control reverting to the previous Timeline in places where the overriding Timeline has no Cinemachine Camera Clips active.",
+    "subtitleFive": "Blend with other Cinemachine Tracks and the Brain",
+    "paragraphEleven": "You can blend a Cinemachine Shot Clip with another one that is in a separate Cinemachine Track, or even with the Cinemachine Camera currently identified as the Live one by the Cinemachine Brain.",
+    "paragraphTwelve": "For this, change the Ease In Duration and Ease Out Duration time values of the the clip in the Inspector.",
+    "subtitleSix": "Additional resources",
+    "paragraphThirteen": "Set up Timeline with Cinemachine Cameras"
+  },
+
+  "SetupEnvironment": {
+    "title": "Set up a basic Cinemachine environment",
+    "paragraphOne": "Set up your Unity project with the minimum required elements to make a functional Cinemachine environment:",
+    "listOne": [
+      "Create a passive Cinemachine Camera – with no specific behavior by definition,",
+      "Ensure the Cinemachine Brain is present in the Unity Camera, and",
+      "Adjust the Cinemachine Camera properties and see how it affects the Unity Camera."
+    ],
+    "noteOne": "Your Scene must include only one Unity Camera – a GameObject with a Camera component.",
+    "subtitleOne": "Add a Cinemachine Camera",
+    "paragraphTwo": "In the Scene view, navigate the Scene to get the point of view you want to frame with the Cinemachine Camera.",
+    "paragraphThree": "In the Unity menu, select GameObject > Cinemachine > Cinemachine Camera. Unity adds a new GameObject with:",
+    "listTwo": [
+      "A Cinemachine Camera component and",
+      "A Transform that matches the latest position and orientation of the Scene view camera."
+    ],
+    "subtitleTwo": "Verify the Cinemachine Brain presence",
+    "paragraphFour": "When you create a first Cinemachine Camera in a Scene, Unity automatically adds a Cinemachine Brain to the Unity Camera, unless the Unity Camera already includes one. To verify it:",
+    "paragraphFive": "In the Hierarchy, select your Unity Camera – the GameObject that includes the Camera component.",
+    "paragraphSix": "In the Inspector, verify that the GameObject includes a Cinemachine Brain component.",
+    "noteTwo": "You can manually add the Cinemachine Brain component as any other component to the Unity Camera GameObject if needed, but remember that only one Unity Camera in the Scene must have a Cinemachine Brain.",
+    "noteThree": "Once the Cinemachine Brain is present, the Unity Camera's transform and lens settings are locked and cannot be changed directly in the Camera inspector. You can only change these properties of the camera by changing the corresponding properties of the CinemachineCamera.",
+    "subtitleThree": "Adjust the Cinemachine Camera properties",
+    "paragraphSeven": "Open the Game view. It shows the Scene through the lens of the Unity Camera according to the current settings of the Cinemachine Camera.",
+    "paragraphEight": "In the Hierarchy, select the Cinemachine Camera GameObject.",
+    "paragraphNine": "In the Inspector, adjust the properties to precisely frame your shot according to your needs:",
+    "listThree": [
+      "In the Transform, adjust the Position and Rotation.",
+      "In the Cinemachine Camera component, adjust the Lens properties."
+    ],
+    "noteFour": "This Cinemachine Camera is the only one and latest you created, and as such, that you enabled. As a result, notice that the Unity Camera automatically inherits from the changes you perform on this Cinemachine Camera.",
+    "subtitleFour": "Next steps",
+    "paragraphTen": "Here are potential tasks you might want to do now:",
+    "listFour": [
+      "Create multiple Cinemachine Cameras and manage transitions between them.",
+      "Create a Cinemachine Camera with procedural behavior: example for a camera that follows a character.",
+      "Manage a choreographed sequence of Cinemachine Camera shots with Timeline."
+    ]
+  },
+  "SetupMultipleCam": {
+    "title": "Set up multiple Cinemachine Cameras and transitions",
+    "paragraphOne": "Set up a Cinemachine environment with multiple Cinemachine Cameras and manage camera control and transitions:",
+    "listOne": [
+      "Create multiple Cinemachine Cameras with different properties,",
+      "Manage Cinemachine Camera transitions in the Cinemachine Brain, and",
+      "Test the Live camera activation mechanism and transitions in Play mode."
+    ],
+    "noteOne": "Your Scene must include only one Unity Camera – a GameObject with a Camera component.",
+    "subtitleOne": "Add Cinemachine Cameras",
+    "paragraphTwo": "In the Scene view, navigate the Scene to get the point of view you want to frame with one Cinemachine Camera.",
+    "paragraphThree": "In the Unity menu, select GameObject > Cinemachine > Cinemachine Camera. Unity adds a new GameObject with a Cinemachine Camera component and a Transform that matches the latest position and orientation of the Scene view camera. At this point, you can also verify that the Unity Camera includes a Cinemachine Brain component.",
+    "paragraphFour": "Continue to navigate the Scene and create a few additional Cinemachine Cameras the same way but with different positions and rotations.",
+    "paragraphFive": "Name the Cinemachine Cameras in a way you can easily identify them in the future.",
+    "subtitleTwo": "Manage transitions between Cinemachine Cameras",
+    "paragraphSix": "In the Hierarchy, select your Unity Camera – the GameObject that includes the Camera component.",
+    "paragraphSeven": "In the Inspector, in the Cinemachine Brain component:",
+    "listTwo": [
+      "Select a Default Blend to use between all Cinemachine Cameras, OR",
+      "Create and target an asset that defines Custom Blends to use between specific pairs of Cinemachine Cameras."
+    ],
+    "subtitleThree": "Test the transitions in Play mode",
+    "paragraphEight": "Enter Play mode.",
+    "paragraphNine": "Change the active status of each Cinemachine Camera GameObject in turn to see how they blend between each other according to the way you've set up the Cinemachine Brain.",
+    "paragraphTen": "Exit Play mode.",
+    "subtitleFour": "Next steps",
+    "paragraphEleven": "Here are potential tasks you might want to do now:",
+    "listThree": [
+      "Create a Cinemachine Camera with procedural behavior: example for a camera that follows a character.",
+      "Manage a choreographed sequence of Cinemachine Camera shots with Timeline."
+    ]
+  },
+  "SetupProceduralBehavior": {
+    "title": "Add procedural behavior to a Cinemachine Camera",
+    "paragraphOne": "Set up a Cinemachine Camera with procedural behaviors:",
+    "listOne": [
+      "Add behaviors to control the camera position and rotation,",
+      "Specify a GameObject to track for automatic follow and aim,",
+      "Add default noise to simulate real-world physical camera shaking, and",
+      "See how to an Extension to get advanced camera behaviors."
+    ],
+    "noteOne": "This task requires some preparation:",
+    "listTwo": [
+      "You must have created at least one passive Cinemachine Camera, and",
+      "Your Scene must already include a GameObject you can target to follow it with the Cinemachine Camera."
+    ],
+    "subtitleOne": "Add Position Control and Rotation Control behaviors",
+    "paragraphTwo": "In the Hierarchy, select the Cinemachine Camera GameObject.",
+    "paragraphThree": "In the Inspector, in the Cinemachine Camera component, set the Position Control property to Follow. Unity adds a Cinemachine Follow component to the GameObject.",
+    "paragraphFour": "Still in the Cinemachine Camera component, set the Rotation Control property to Rotation Composer. Unity adds a Cinemachine Rotation Composer component to the GameObject.",
+    "noteTwo": "You get the same result when you create a Follow Camera directly from the Editor's menu: GameObject > Cinemachine > Targeted Cameras > Follow Camera. The goal here is to show how to add behavior to an existing Cinemachine Camera.",
+    "paragraphFive": "See the Cinemachine Camera component reference to get the list of available Position Control and Rotation Control behaviors and access their detailed descriptions.",
+    "warningOne": "A Cinemachine Camera GameObject can only have one Position Control behavior and one Rotation Control behavior selected at a time. If you edit the properties of a behavior component and then select another behavior from the Cinemachine Camera component, your edits are lost.",
+    "subtitleTwo": "Specify a GameObject to track",
+    "paragraphSix": "The behaviors selected in the previous step require a tracking target. To meet this requirement:",
+    "paragraphSeven": "In the Inspector, in the Cinemachine Camera component, set the Tracking Target property to specify the GameObject to track.",
+    "paragraphEight": "Move the targeted GameObject in the Scene to test the Cinemachine Camera behaviors. The Cinemachine Camera automatically positions the Cinemachine Camera relative to this GameObject at all times according to the Follow behavior, and rotates the camera to look at the GameObject according to the Rotation Composer behavior.",
+    "subtitleThree": "Add noise for camera shaking",
+    "paragraphNine": "To optionally add noise to simulate real-world physical camera shaking:",
+    "paragraphTen": "In the Inspector, in the Cinemachine Camera component, set the Noise property to Basic Multi Channel Perlin. Unity adds a Cinemachine Basic Multi Channel Perlin component to the GameObject.",
+    "paragraphEleven": "In the Cinemachine Basic Multi Channel Perlin component, click on the configuration button at the right of Noise Profile.",
+    "paragraphTwelve": "Under Presets, select an existing Noise Settings asset.",
+    "paragraphThirteen": "Enter Play mode to see the effect of the selected noise profile on the camera, then exit Play mode.",
+    "warningTwo": "If you edit the properties of the Cinemachine Basic Multi Channel Perlin component and then change the Noise selection from the Cinemachine Camera component, your edits are lost.",
+    "paragraphFourteen": "For further noise behavior adjustments, see the Cinemachine Basic Multi Channel Perlin component reference and Noise Settings asset reference.",
+    "subtitleFour": "Add a Cinemachine Camera Extension",
+    "paragraphFifteen": "To optionally add an Extension to the Cinemachine Camera when you need to get a specific or advanced behavior:",
+    "paragraphSixteen": "In the Inspector, in the Cinemachine Camera component, click on (select) at the right of Add Extension.",
+    "paragraphSeventeen": "Select an Extension in the list. Unity adds the corresponding Extension component to the GameObject.",
+    "noteThree": "You can add as many Extensions as needed to the same Cinemachine Camera GameObject. You can remove an Extension as any other GameObject component.",
+    "paragraphEighteen": "See the Reference to get the list of all available Cinemachine Camera Extensions and access their detailed descriptions.",
+    "subtitleFive": "Next steps",
+    "paragraphNineteen": "Here are potential tasks you might want to do now:",
+    "listThree": [
+      "Create multiple Cinemachine Cameras and manage transitions between them.",
+      "Manage a choreographed sequence of Cinemachine Camera shots with Timeline."
+    ]
+  },
+  "SetupTimeline": {
+    "title": "Set up Timeline with Cinemachine Cameras",
+    "paragraphOne": "Set up Timeline in a Cinemachine environment to choreograph Cinemachine Cameras and produce a predictable shot sequence:",
+    "listOne": [
+      "Prepare multiple Cinemachine Cameras to support the various shots,",
+      "Prepare a Timeline, create a Cinemachine Track, and add Cinemachine Shot Clips, and",
+      "Manage camera cuts and blends."
+    ],
+    "subtitleOne": "Prepare the Cinemachine Cameras",
+    "paragraphTwo": "In the Hierarchy, create a few static or procedural Cinemachine Cameras with different properties according to the shots you want to get.",
+    "paragraphThree": "Name the Cinemachine Cameras in a way you can easily identify them in the future.",
+    "subtitleTwo": "Prepare the Timeline",
+    "paragraphFour": "Create an empty GameObject in your Scene: from the Editor's menu, select GameObject > Create Empty.",
+    "paragraphFive": "Give this empty GameObject a descriptive name, for example, 'My Timeline'.",
+    "paragraphSix": "Open the Timeline window if it's not already open, and Create a Timeline Asset and instance for 'My Timeline' GameObject.",
+    "paragraphSeven": "Click the padlock button to lock the Timeline window and make it easier to add and adjust tracks.",
+    "paragraphEight": "If needed, add tracks that control the subjects of your Scene. For example, add an Animation track to animate your main character.",
+    "subtitleThree": "Create a Cinemachine Track with Cinemachine Shot Clips",
+    "paragraphNine": "From the Hierarchy, drag the Unity Camera GameObject that includes a Cinemachine Brain component onto the Timeline Editor, then select Create Cinemachine Track. Unity adds a Cinemachine Track targeting the Unity Camera in Timeline.",
+    "paragraphTen": "From the Hierarchy, drag a first Cinemachine Camera GameObject onto the added Cinemachine Track. Unity adds to the Cinemachine Track a Cinemachine Shot Clip targeting the Cinemachine Camera you selected.",
+    "paragraphEleven": "Repeat the previous step as many times as needed with other Cinemachine Cameras to get additional Cinemachine Shot Clips in the Cinemachine Track.",
+    "noteOne": "You can reuse the same Cinemachine Camera several times in separate Cinemachine Shot Clips placed at different times in the Cinemachine Track.",
+    "paragraphTwelve": "Adjust the order and duration of Cinemachine Shot Clips according to the desired shot sequence.",
+    "subtitleFour": "Create camera cuts",
+    "paragraphThirteen": "To produce a camera cut between two shots:",
+    "paragraphFourteen": "Place the two Cinemachine Shot Clips or edit their boundaries so that the clips stick to each other without overlapping.",
+    "subtitleFive": "Create camera blends",
+    "paragraphFifteen": "To make the Cinemachine Cameras blend their properties between two shots:",
+    "paragraphSixteen": "Move the two Cinemachine Shot Clips or edit their boundaries so that the clips overlap.",
+    "paragraphSeventeen": "The resulting overlap area defines the blend duration."
+  },
+
+  "UseToolsAndShortcuts": {
+    "title": "Use convenient tools and shortcuts",
+    "paragraphOne": "Cinemachine includes several user interface tools and shortcuts to help you target the proper Cinemachine elements to set up according to your needs and ease your configuration experience.",
+    "features": ["Pre-built cameras", "Scene handles", "Save in Play mode"],
+    "descriptions": [
+      "Use menu shortcuts to create pre-built Cinemachine Cameras that target specific use cases.",
+      "Use a set of 3D controls to manipulate CinemachineCamera parameters visually in the Scene view.",
+      "Allow the Unity Editor to save the Cinemachine parameter changes you make in Play mode."
+    ]
+  },
+  "PreBuiltCameras": {
+    "title": "Pre-built Cinemachine Cameras",
+    "paragraphOne": "The Cinemachine package includes a series of shortcuts for pre-built Cinemachine Cameras that target specific use cases. To use a pre-built Cinemachine Camera, from the Editor's menu, select GameObject > Cinemachine, and then select the camera type according to the following list:",
+    "menuItems": [
+      "State-Driven Camera",
+      "Targeted Cameras > Follow Camera",
+      "Targeted Cameras > Target Group Camera",
+      "Targeted Cameras > FreeLook Camera",
+      "Targeted Cameras > Third Person Aim Camera",
+      "Targeted Cameras > 2D Camera",
+      "Cinemachine Camera",
+      "Sequencer Camera",
+      "Dolly Camera with Spline",
+      "Dolly Cart with Spline",
+      "Mixing Camera",
+      "ClearShot Camera"
+    ],
+    "descriptions": [
+      "Creates a Manager Camera that parents a group of Cinemachine Cameras and handles them according to animation state changes.",
+      "Creates a Cinemachine Camera with preselected behaviors suitable for following and framing a character.",
+      "Creates a Cinemachine Camera with preselected behaviors and extension suitable for following and framing groups. Also creates an empty Target Group and assigns it to the Tracking Target field of the new Cinemachine camera.",
+      "Creates a Cinemachine Camera with preselected behaviors and extensions suitable for character-centric free look scenarios with user input.",
+      "Creates a Cinemachine Camera with preselected position behavior and aim extension suitable for third-person aiming scenarios. The ThirdPerson Aim camera is a fixed rig that is driven by the tracking target's rotation and position. No direct user control is provided. For a camera that provides user control of the camera position, choose FreeLook Camera.",
+      "Creates a Cinemachine Camera with preselected position composer behavior suitable for 2D game scenarios.",
+      "Creates a default Cinemachine Camera without preselected behaviors. Use it to create a passive Cinemachine Camera or to build your own custom Cinemachine Camera from scratch. The camera will be positioned and rotated to match the current scene view camera.",
+      "Creates a Manager Camera that parents a group of Cinemachine Cameras and handles them according to a specified sequence.",
+      "Creates a Cinemachine Camera with preselected behaviors to make it move along a Spline. Also creates a spline and assigns it to the camera. You can modify this spline or replace it with another one.",
+      "Creates an empty GameObject with its Transform constrained to a Spline. Use it to animate any GameObject along a path, or as a tracking target for Cinemachine Camera. Also creates a spline and assigns it to the dolly cart. You can modify this spline or replace it with another one.",
+      "Creates a Manager Camera that parents a group of Cinemachine Cameras and provides a continuous blend according to a specified weighting.",
+      "Creates a Manager Camera that parents a group of Cinemachine Cameras and chooses from them according to shot quality criteria."
+    ],
+    "note": "If you right-click on a GameObject and create one of the targeted cameras, the 'Tracking Target' of the new camera will automatically be populated with the object on which you right-clicked."
+  },
+  "SceneHandles": {
+    "title": "Cinemachine Handle toolbar",
+    "paragraphOne": "The Cinemachine Handle toolbar is a group of 3D controls that allow you to manipulate CinemachineCamera parameters visually in the Scene view. You can use the handle tools to interactively adjust the selected object's parameters quickly and efficiently rather than controlling them via the inspector.",
+    "paragraphTwo": "The toolbar automatically appears in the Scene view toolbar Overlay when you select a type of CinemachineCamera with an associated handle.",
+    "handleToolsTitle": "Handle tools",
+    "paragraphThree": "The following four Handle tools are available in the toolbar:",
+    "fovTitle": "1. Field of View (FOV)",
+    "fovDescription": "The FOV tool can adjust Vertical FOV, Horizontal FOV, Orthographic Size, or Focal Length depending on what's selected by the user. It can control:",
+    "fovList": [
+      "Vertical or Horizontal FOV (depending on the selection in the Main Camera) when the camera is in Perspective mode.",
+      "Orthographic Size when the camera is in Orthographic mode.",
+      "Focal length when the camera is in Physical mode."
+    ],
+    "paragraphFour": "For more information on the Field of View (FOV) property see, Setting CinemachineCamera properties.",
+    "clipPlanesTitle": "2. Far/Near clip planes",
+    "paragraphFive": "You can drag the points to increase the far clip plane and near clip plane.",
+    "paragraphSix": "For more information on the Far and Near clip plane properties see, Setting CinemachineCamera properties.",
+    "followOffsetTitle": "3. Follow offset",
+    "paragraphSeven": "The Follow offset is an offset from the Follow Target. You can drag the points to increase or decrease the Follow offset position.",
+    "paragraphEight": "For more information on the Follow offset property see, Orbital Follow properties.",
+    "trackedObjectOffsetTitle": "4. Tracked object offset",
+    "paragraphNine": "This starts from where the camera is placed. You can drag the points to increase or decrease the tracking target position when the desired area isn't the tracked object’s center.",
+    "paragraphTen": "For more information on the Tracked object offset property see, Rotation Composer properties."
+  },
+  "SavingInPlayMode": {
+    "title": "Saving in Play Mode",
+    "paragraphOne": "It’s often most convenient to adjust camera settings while the game is playing. But normally, Unity does not save your changes to the Scene when you exit Play Mode. Cinemachine has a special feature to preserve the tweaks you make during Play Mode. It doesn’t save structural changes, like adding or removing a behavior. With the exception of certain properties, Cinemachine preserves most of the settings in your CinemachineCameras when you exit Play Mode.",
+    "paragraphTwo": "When you exit Play Mode, Cinemachine scans the Scene to collect any changed properties in the CinemachineCameras. Cinemachine saves these changes a second or so after exiting. Use the Edit > Undo command to revert these changes.",
+    "paragraphThree": "Check Save During Play on any CinemachineCamera in the Inspector to enable this feature. This is a global property, not per-camera, so you only need to check or uncheck it once.",
+    "paragraphFour": "Cinemachine components have the special attribute [SaveDuringPlay] to enable this functionality. Specific fields are excluded from being saved by having the [NoSaveDuringPlay] attribute added to the field.",
+    "paragraphFive": "You can also use the [SaveDuringPlay] and [NoSaveDuringPlay] on your own custom scripts, to acquire the same functionality for them as well."
+  },
+
+  "TrackingScenario3D": {
+    "title": "3D tracking scenarios",
+    "paragraphOne": "Use Cinemachine to follow and look at the active characters of your 3D games.",
+    "list:": [
+      "Follow and frame a character",
+      "Follow and frame a group",
+      "Create a FreeLook Camera",
+      "Create a Third Person Camera"
+    ]
+  },
+  "FollowFrameCharacter": {
+    "title": "Follow and frame a character",
+    "paragraphOne": "Create and set up a Cinemachine Camera that automatically follows and frames a character.",
+    "noteOne": "Your Scene must include a GameObject you can target to follow it with the Cinemachine Camera.",
+    "subTitleOne": "Add a 'Follow' Cinemachine Camera",
+    "stepsOne": [
+      "In the Unity menu, select GameObject > Cinemachine > Targeted Cameras > Follow Camera.",
+      "Verify that the Unity Camera includes a Cinemachine Brain component.",
+      "In the Inspector, in the Cinemachine Camera component, set the Tracking Target property to specify the GameObject to follow and look at. "
+    ],
+    "stepsOneSubparagraph": "Unity adds a new GameObject with:",
+    "stepsOneList": [
+      "A Cinemachine Camera component,",
+      "A Cinemachine Follow component handling the Cinemachine Camera behavior for Position Control, and",
+      "A Cinemachine Rotation Composer component handling the Cinemachine Camera behavior for Rotation Control."
+    ],
+    "stepsThree": "The CinemachineCamera automatically positions the Unity camera relative to this GameObject at all times, and rotates the camera to look at the GameObject, even as you move it in the Scene.",
+    "noteTwo": "If you invoked the Follow Camera menu item by right-clicking on the GameObject that you want to follow, the 'Tracking Target' of the new camera will automatically be populated with the object on which you right-clicked.",
+    "subTitleTwo": "Adjust the Cinemachine Camera behavior",
+    "paragraphTwoList": [
+      "Use the Inspector to access the Cinemachine Camera component properties for further configuration.",
+      "Adjust the properties such as:"
+    ],
+    "stepsTwo": [
+      "The follow offset",
+      "The follow damping",
+      "The screen composition",
+      "The damping used when re-aiming the camera",
+      "The Lens settings"
+    ]
+  },
+  "FollowFrameGroup": {
+    "title": "Follow and frame a group",
+    "paragraphOne": "Use Cinemachine Target Group to treat multiple Transforms as a single Tracking target.",
+    "paragraphTwo": "It can also be used as targets for procedural behaviours that need to know the size of the target, for example the Group Framing extension.",
+    "subtitleOne": "To create a Target Group",
+    "ulListOne": [
+      "Add a CinemachineTargetGroup component to an empty GameObject."
+    ],
+    "subtitleTwo": "To create a new Cinemachine Camera with a Target Group",
+    "ulListTwo": [
+      "In the Unity menu, choose GameObject > Cinemachine > Targeted Cameras > Target Group Camera."
+    ],
+    "paragraphThree": "Unity adds a new CinemachineCamera and Target Group to the Scene. The Trancking Target in the CinemachineCamera refers to the new Target Group.",
+    "subTitleThree": "To convert an existing CinemachineCamera target to a target group",
+    "ulListThree": [
+      "Select Convert to TargetGroup from the popup menu to the right of the Tracking Target field in the CinemachineCamera inspector.  This will create a new Target Group game object, add the current target to the group, and set the Cinemachine Camera's Tracking Target to be that group."
+    ],
+    "subtitleFour": "To Populate a Target Group",
+    "olListOne": [
+      "Select the new Target Group object.",
+      "In the Inspector, click the + sign to add a new item to the group.",
+      "In the new item, assign a GameObject (you can drag and drop from the Hierarchy), and edit the Weight and Radius properties.  It's important to give the target a non-zero weight, or it will be ignored by the group.",
+      "To add more GameObjects to the Target Group, repeat steps 2-3."
+    ]
+  },
+  "FreeLookCamera": {
+    "title": "Create a FreeLook Camera",
+    "paragraphOne": "With Cinemachine 3.0, the FreeLook camera is no longer a separate class as it was in prior versions of Cinemachine. Instead, it is implemented by setting up a CinemachineCamera with the appropriate behaviors.",
+    "paragraphTwo": "A FreeLook is a CinemachineCamera that tracks a GameObject target and allows the user to control the camera's viewing angle. Essentially, it is a camera that can orbit the target in response to user input. There are several possible ways to implement such a camera, each with its own style of behavior and idiosyncrasies. The one you choose will depend on the way your target moves, and on the specific camera behavior that you want. It's a good exercise to think carefully about how you want the camera to behave. There is no one-size-fits-all.",
+    "paragraphThree": "When you choose Cinemachine > FreeLook Camera from the GameObject menu, it will by default create a CinemachineCamera with the following components:",
+    "paragraphFour": "The Orbital Follow provides the orbiting position functionality, and the Rotation Composer ensures that the camera always looks at the target, from whatever position it is. User input is provided by the Input Axis Controller component. The settings there will allow you to map the camera angle to whatever input controls you like, and to tune their responsiveness.",
+    "paragraphFive": "The Cinemachine Free Look Modifier behavior's job is to allow you to tweak some settings as a function of the vertical viewing angle of the camera. For example, you can have different lens settings depending on whether you look from the top or from the bottom. A number of different possibilities are provided with that component, and of course it is always possible to craft your own and add them. Cinemachine Free Look Modifier is an optional component, and you can remove it if you don't need what it provides.",
+    "paragraphSix": "An alternative version of a FreeLook can be made by changing the Position Control behavior to Position Composer and the Rotation Control behavior to Pan Tilt.",
+    "paragraphSeven": "In this case, Pan Tilt sets the viewing angle, and Position Composer positions the camera such that the target is properly placed on the screen."
+  },
+  "ThirdPersonCamera": {
+    "title": "Create a Third Person Camera",
+    "paragraphOne": "While it is possible - and often appropriate - to make a Third Person camera using a FreeLook Camera, there are cases where that doesn't give you all the control you need. For example, when you want to have an over-the-shoulder offset, or precise aiming control (in a shooter, for instance) and want to keep that control while blending to an aiming camera, it can be difficult to maintain the desired precision with the FreeLook.",
+    "paragraphTwo": "To address this problem, Cinemachine provides the Third Person Follow behaviour. The paradigm for using this behaviour is not the same as with the FreeLook. Specifically, the ThirdPersonCamera is rigidly attached to the Tracking target, and to aim the camera, you must rotate the target itself. The camera's forward direction will always match the Target's forward direction, even though the camera is offset a little from the target, as specified in the rig settings.",
+    "paragraphThree": "This means that aim control is not built into the camera, it must be provided by the target. Often, the target will be an invisible child object of the player, thus decoupling player aim from player model rotation. See these Cinemachine samples for examples of how this might be implemented:",
+    "ulListOne": ["ThirdPersonWithAimMode", "ThirdPersonWithRoadieRun"],
+    "paragraphFour": "These samples make use of the Third Person Aim extension which uses raycasts to determine what the camera is aiming at, and ensures that this point is locked to screen center, even if there is procedural noise active on the camera."
+  },
+  "TopDownGamesAnd2DPage": {
+    "title": "2D and top-down games",
+    "paragraphOne": "Use and configure Cinemachine to meet your expectations according to specific requirements of 2D graphics and top-down games.",
+    "list": ["Cinemachine and 2D graphics", "Cinemachine and top-down games"]
+  },
+  "2DGraphics": {
+    "title": "2D graphics",
+    "paragraphOne": "Cinemachine supports orthographic cameras. When you set the Unity camera's projection to Orthographic, Cinemachine adjusts to accommodate it. In CinemachineCamera properties for Lens, FOV is replaced by Orthographic Size. Note that settings related to FOV and certain FOV-oriented behaviors such as Follow Zoom have no effect if the camera is orthographic.",
+    "paragraphTwo": "In orthographic environments, it doesn’t usually make sense to rotate the camera. Accordingly, Cinemachine provides the Position Composer to handle framing and composition without rotating the camera.",
+    "paragraphThree": "When the main camera has a Pixel Perfect component, you can add a The Cinemachine Pixel Perfect extension to your CinemachineCamera to enable it to play well with the Pixel Perfect environment.",
+    "paragraphFour": "To confine the camera to a specific region of your 2D world, you can use the Cinemachine Confiner 2D extension"
+  },
+  "TopDownGames": {
+    "title": "Top-down games",
+    "paragraphOne": "Cinemachine CinemachineCameras are modelled after human camera operators and how they operate real-life cameras. As such, they have a sensitivity to the up/down axis, and always try to avoid introducing roll into the camera framing. Because of this sensitivity, the CinemachineCamera avoids looking straight up or down for extended periods. They may do it in passing, but if the Look At target is straight up or down for extended periods, they will not always give the desired result.",
+    "paragraphTwo": "If you are building a top-down game where the cameras look straight down, the best practice is to redefine the up direction, for the purposes of the camera. You do this by setting the World Up Override in the Cinemachine Brain to a GameObject whose local up points in the direction that you want the CinemachineCamera’s up to normally be. This definition of Up is applied to all CinemachineCameras controlled by that Cinemachine Brain."
+  },
+  "ConstrainCameraToPath": {
+    "title": "Constrain a camera to a path",
+    "paragraphOne": "Use a Spline to constrain the movement of a camera along a predefined and customizable path.",
+    "paragraphTwo": "A Spline path is a path formed by a Spline in a scene. Use a Spline to specify a fixed course to position or animate a CinemachineCamera. Use the Spline Dolly behaviour to make your CinemachineCamera follow a Spline path.",
+    "paragraphThree": "To create a Cinemachine Camera with a dolly path:",
+    "pargraphThreeList": [
+      "In the Unity menu, choose GameObject > Cinemachine > Dolly Camera with Spline. A new Cinemachine Camera and spline appear in the Hierarchy.",
+      "In the Hierarchy window, select the new dolly spline GameObject.",
+      "In the Inspector or in the Scene View, add and adjust waypoints."
+    ],
+    "paragraphFour": "Any Unity spline can be used as a path in Cinemachine. Just drag it into the Spline Dolly Spline property field, and immediately the CinemachineCamera will be confined to the spline.",
+    "paragraphFive": "By default, Unity Splines contain no rotation data. Camera rotation will be inferred from the spline tangent at any point, combined with the world Up vector. To add rotation about the tangent, you can use the Cinemachine Spline Roll behaviour. This allows you to specify Roll values for any point along the spline. Roll values are used to rotate the camera about the spline tangent at that point, giving you more control over the camera's final rotation.",
+    "paragraphSix": "If a Cinemachine Spline Roll behaviour is added to the spline, all cameras and dolly carts that use the spline will see it. Alternatively, you can add the Cinemachine Spline Roll behaviour to the Cinemachine Camera itself, in which case the roll will only apply to it.    "
+  },
+  "ApplyNoiseSimulationPage": {
+    "title": "Apply noise to simulate camera shake",
+    "paragraphOne": "To apply a noise behavior to a Cinemachine Camera:",
+    "paragraphOneList": [
+      "In the Hierarchy, select your Cinemachine Camera.",
+      "In the Inspector, in the Cinemachine Camera component, select Noise and then select Basic Multi Channel Perlin. This adds a noise behavior to the Cinemachine Camera.",
+      "In the Basic Multi Channel Perlin component, under Noise Profile, choose an existing noise profile asset or create your own profile.",
+      "Use Amplitude Gain and Frequency Gain to fine-tune the noise."
+    ],
+    "paragraphTwo": "Noise is meant to be used for things such as hand-held camera effects, where the noise is continuous. For sudden shakes (e.g. in response to events like explosions), we recommend the use of Impulse Impulse rather than Noise."
+  },
+  "ManageGroupedCameras": {
+    "title": "Manage grouped cameras",
+    "paragraphOne": "A Manager Camera oversees many CinemachineCameras but acts as a single CinemachineCamera from the point of view of Cinemachine Brain and Timeline.",
+    "paragraphTwo": "Cinemachine includes these manager cameras:",
+    "paragraphTwoList": [
+      "Sequencer Camera: Executes a sequence of blends or cuts of its child CinemachineCameras.",
+      "Clear Shot Camera: Picks the child CinemachineCamera with the best view of the target.",
+      "State-Driven Camera: Picks a child CinemachineCamera in reaction to changes in animation state.",
+      "Mixing Camera: Creates a continuous blend by using the weighted average of up to eight child CinemachineCameras."
+    ],
+    "paragraphThree": "Because manager cameras act like normal CinemachineCameras, you can nest them. In other words, create arbitrarily complex camera rigs that combine regular CinemachineCameras and manager cameras.",
+    "subtitleOne": "Making Your Own Custom Manager Camera",
+    "paragraphFour": "It is also possible to make your own manager camera that selects its current active child according to an arbitrary algorithm that you provide. For instance, if you are making a 2D Platformer and want a camera rig that frames itself differently according to whether the character is moving right or left, or jumping, or falling, a custom CameraManager class might be a good approach.",
+    "paragraphFive": "To do this, make a new class that inherits CinemachineCameraManagerBase. This base class implements an array of CinemachineCamera children, and a blender.",
+    "paragraphSix": "Next, implement the abstract ChooseCurrentCamera method. This is called every frame while the manager is active, and should return the child camera that ought to be active this frame. Your custom class can make that decision any way it likes. In the example, it would look at the player state to find out the facing direction and the jumping/falling state, and choose the appropriate child camera.",
+    "paragraphSeven": "If the new desired camera is different from what it was on the last frame, CinemachineCameraManagerBase will initiate a blend, according to what you set up in its DefaultBlend and CustomBlends fields.",
+    "paragraphEight": "Once you've added the child cameras with the settings you like for each player state and have wired them into your manager instance, you will have a Cinemachine rig that adjusts itself according to player state. The rig itself will look to the rest of the system just like an ordinary CinemachineCamera, and so can be used wherever CinemachineCameras can - including being nested within other rigs.",
+    "paragraphNine": "Note that Cinemachine ships with State-Driven Camera, which implements this functionality provided that the relevant player state is encoded in an Animation Controller State-Machine. You would implement your own manager in the case that the state is not being read from an Animation Controller.",
+    "subtitleTwo": "Managed Cameras need to be GameObject children of the manager",
+    "paragraphTen": "This is mainly to prevent problems that can occur if you nest managers and end up with a recursive loop. Forcing the managed cameras to be children makes recursion impossible."
+  },
+  "AvoidCollisionsAndEvaluateShots": {
+    "title": "Avoid collisions and evaluate shots",
+    "paragraphOne": "As characters and objects move around in a complex Scene, obstacles in the Scene sometimes come between a camera and its target. Similarly, you might need to move a camera to a position in the Scene that another GameObject already occupies. Cinemachine provides extensions to handle these situations:",
+    "paragraphOneList": [
+      "Cinemachine Decollider",
+      "Cinemachine Deoccluder",
+      "Cinemachine Confiner 3D",
+      "Cinemachine Confiner 2D"
+    ]
+  },
+  "CinemachineEvents": {
+    "title": "Cinemachine Events",
+    "paragraphOne": "Cinemachine will generate events whenever cameras are activated and deactivated, and also when blends are started and when they finish. Furthermore, an event is generted when there is a camera cut - that is, when the active cinemachine camera changes without blending.",
+    "paragraphTwo": "When Cinemachine sends an event, it is sent globally via CinemachineCore. Scripts can add listeners to those events and take action based on them. Listeners will receive events for all cameras.",
+    "paragraphThree": "Events are generated in every context that manages blends. This includes the CinemachineBrain, which handles blends at the highest level, but it also applies to Cinemachine Manager Cameras, which thenselves manage blends between their child cameras.",
+    "paragraphFour": "Sometimes it's desirable to have events sent only for a specific camera, so that scripts can be notified based on this specific camera's activity without having to provide code to filter the events. Cinemachine provides the following behaviours to execute this filtering logic.",
+    "paragraphFourList": [
+      "You can trap events that relate to activating or deactivating a specific CinemachineCamera or ManagerCamera by adding a Cinemachine Camera Events behaviour to it.",
+      "You can trap events generated by a ManagerCamera by adding a Cinemachine Camera Manager Events behaviour to it.",
+      "You can trap events that are generated by a specific CinemachineBrain by adding a Cinemachine Brain Events to it."
+    ]
+  },
+  "CinemachineImpulse": {
+    "title": "Cinemachine Impulse",
+    "paragraphOne": "Cinemachine Impulse generates and manages camera shake in response to game events. For example, you can use Impulse to make a CinemachineCamera shake when one GameObject collides with another, or when something in your Scene explodes.",
+    "paragraphTwo": "Impulse has two parts:",
+    "paragraphThree": "1. Impulse Source: a component that emits a signal that originates at a point in space and propagates outwards, much like a sound wave or a shock wave. This emission is triggered by events in the game.",
+    "paragraphFour": "The signal consists of a direction, and a curve specifying the strength of the signal as a function of time. Together, these effectively define a shake along a specified axis, lasting a specified amount of time. This shake travels outward from the point of origin, and when it reaches the location of an Impulse Listener, that listener can respond to it.",
+    "paragraphFive": "2. Impulse Listener: a Cinemachine extension that allows a CinemachineCamera to “hear” an impulse, and react to it by shaking.",
+    "paragraphSix": "It’s useful to think about this in terms of individual “impulses.” An impulse is a single occurrence of an Impulse Source emitting a signal. Collisions and events in your Scenes trigger impulses, Impulse Sources generate impulses, and Impulse Listeners react to impulses.",
+    "subtitleOne": "Getting started with Impulse",
+    "paragraphSeven": "To set up and use Impulse in a Scene, do the following:",
+    "paragraphSevenList": [
+      "Add Cinemachine Impulse Source or Cinemachine Collision Impulse Source components to one or more GameObjects that you want to trigger a camera shake.",
+      "Add a Cinemachine Impulse Listener extension to one or more Cinemachine CinemachineCameras so they can detect and react to impulses."
+    ]
+  },
+  "SplitScreenMultipleCameras": {
+    "title": "Split screen and multiple Unity Cameras",
+    "paragraphOne": "By design, CinemachineCameras are not directly linked to CinemachineBrains. Instead, active CinemachineCameras in the scene are dynamically found by the Brain, allowing them to be brought into existence via prefab instantiation or scene loading. By default, if multiple CinemachineBrains exist in the scene, they will all find the same CinemachineCameras and consequently display the same thing. To assign a specific CinemachineCamera to a specific Brain, Cinemachine Channels are used. This works the same way as Unity Layers.",
+    "paragraphTwo": "First, set your CinemachineCamera to output to the desired channel:",
+    "paragraphThree": "Next, add that channel to the CinemachineBrain's Channel mask. Multiple channels may be present simultaneously in the mask. The CinemachineBrain will use only those CinemachineCameras that output to channels that are present in the mask. All other CinemachineCameras will be ignored."
+  },
+  "UseInputSystem": {
+    "title": "Use Input System with Cinemachine",
+    "paragraphOne": "For more complex input configurations like supporting multiple devices, you will need to receive inputs from the PlayerInput component provided by the Input System package. The following section assumes you already know how to setup this component. For more information, see the Input System documentation and samples.",
+    "subtitleOne": "Read from PlayerInput",
+    "paragraphTwo": "To read values from a PlayerInput with a behaviour set to InvokeCSharpEvents, you need to create a custom InputAxisController that subscribes to onActionTriggered. The example below shows how to receive and wire those inputs accordingly. Add this script to your CinemachineCamera and assign the PlayerInput field.",
+    "paragraphThree": "For more information, see the Cinemachine Multiple Camera documentation and example if you need to dynamically instantiate cameras."
+  },
+  "KnownIssues": {
+    "title": "Known Issues",
+    "subtitleOne": "Accumulation Buffer Projection Matrix",
+    "paragraphOne": "If accumulation's 'Anti-aliasing' option is enabled and the scene contains a Cinemachine camera cut, the camera's FOV will be incorrect after the cut.",
+    "subtitleTwo": "Workaround: Reset the projection matrix every frame, after CinemachineBrain has modified the camera."
+  },
+
+  "ComingSoom": {
+    "title": "Coming soon!",
+    "paragraphOne": "The current page is not yet fully translated and updated! If you would like it to be completed as soon as possible, please email us.",
+    "paragraphTwo": "You can also contribute to the Unity Chinese Developer Community to complete this page and submit your translation via PR."
+  },
+
+  "Feedback": {
+    "title": "Not satisfied with the page? Let us know!",
+    "buttonOne": "We need Chinese",
+    "buttonTwo": "Translation is inaccurate",
+    "buttonThree": "Page is Functionaly broken",
+    "sendFeedback": "Submit"
+  }
+}

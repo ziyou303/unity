@@ -1,0 +1,60 @@
+.ContentPageTitle {
+  font-size: 36px;
+  color: #333333;
+  margin-block-start: 25px;
+  margin-block-end: 10px;
+}
+.ContentPageSubtitle {
+  font-size: 28px;
+  color: #333333;
+  margin-block-start: 25px;
+  margin-block-end: 10px;
+}
+
+.ContentPageSection {
+  font-size: 24px;
+  color: #333333;
+  margin-block-start: 25px;
+  margin-block-end: 10px;
+}
+.ContentPageParagraph {
+  font-size: 14px;
+  color: #333333;
+  margin-block: 10px;
+}
+.FeedbackComponent {
+  display: flex;
+  flex-direction: column;
+  margin-block: 10px;
+  padding-left: 30px;
+  width: 80%;
+}
+.NoteContainer {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+  padding: 15px;
+  border-radius: 4px;
+  width: 720px;
+  margin-block: 12px;
+}
+.NoteTitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin-block-end: 5px;
+}
+
+.WarningContainer {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+  padding: 15px;
+  border-radius: 4px;
+  width: 720px;
+  margin-block: 12px;
+}
+.WarningTitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin-block-end: 5px;
+}

@@ -1,0 +1,819 @@
+{
+  "Common": {
+    "InThisArticle": "本文内容",
+    "State": "状态",
+    "Section": "章节",
+    "Description": "描述",
+    "Note": "注意",
+    "Warning": "警告",
+    "Feature": "功能"
+  },
+  "CinemachinePackage": {
+    "title": "Cinemachine 组件",
+    "title.comment": "Cinemachine package's title",
+    "descriptionParagraphOne": "Cinemachine 是一套用于控制 Unity 摄像机的模块组件。Cinemachine 解决了跟踪目标跟踪、组合、协调、和切换效果而产生的复杂数学和逻辑问题。它旨在显著减少开发过程中耗费时间的手动操作和脚本修改次数。",
+    "descriptionParagraphOne.comment": "Cinemachine package's first paragraph description",
+    "descriptionParagraphTwo": "这些模块的过程性特点使得 Cinemachine 强大而宽容。当您进行调整时 - 例如，更改动画、车辆速度、地形或场景中的其他 GameObjects - Cinemachine 会动态调整其行为以获得最佳镜头效果。例如，只要一个角色向左转而不是向右转，就无需重新编写摄像机脚本。",
+    "descriptionParagraphTwo.comment": "Cinemachine package's second paragraph description",
+    "descriptionParagraphThree": "Cinemachine 可以实时工作在各种类型的游戏中，包括第一人称射击、第三人称、2D、横向卷轴、俯视视角和实时战略游戏。它支持您场景中需要的任意数量的镜头。其模块化系统使您能够组合复杂的行为。",
+    "descriptionParagraphThree.comment": "Cinemachine package's third paragraph description",
+    "descriptionParagraphFour": "Cinemachine 与其他 Unity 工具兼容良好，作为 Timeline、动画和后期处理资产的强大补充。您可以创建自己的扩展或将其与自定义摄像机脚本集成。",
+    "descriptionParagraphFour.comment": "Cinemachine package's fourth paragraph description"
+  },
+  "InstallationAndUpgrade": {
+    "title": "安装和升级",
+    "title.comment": "Installation and upgrade section title",
+    "installationParagraphOne": "Cinemachine是一个免费的包，可用于任何项目。您可以像安装其他包一样安装Cinemachine。",
+    "installationParagraph.comment": "Installation paragraph",
+    "installationParagraphTwo": "安装Cinemachine后，将出现一个新的GameObject > Cinemachine菜单。您也可以在层次视图中右键单击时访问此菜单。",
+    "installationParagraphTwo.comment": "Installation paragraph two",
+    "requirementsTitle": "系统要求",
+    "requirementsTitle.comment": "Requirements title",
+    "requirementsParagraphOne": "Cinemachine几乎没有外部依赖。只需安装它并开始使用。如果您还在使用通过HDRP或URP卷进行后期处理，则提供了适配器模块 - 受#ifdef指令保护，如果检测到依赖项的存在，则会自动定义。",
+    "requirementsParagraphOne.comment": "Requirements paragraph one",
+    "requirementsParagraphTwo": "对于其他包，如Timeline和UGUI，也有类似的#ifdef保护行为。",
+    "requirementsParagraphTwo.comment": "Requirements paragraph two",
+    "requirementsParagraphThree": "此版本的Cinemachine受以下Unity编辑器版本的支持：",
+    "requirementsParagraphThree.comment": "Requirements paragraph three",
+    "requirementVersion": "2022.2.16f1及更高版本",
+    "requirementVersion.comment": "Requirement version",
+    "upgradingTitle": "从以前的Cinemachine版本升级",
+    "upgradingTitle.comment": "Upgrading title",
+    "upgradingParagraphOne": "Cinemachine 3.0是从CM 2.X到主要版本更改，API和数据格式已经发生了重大变化。针对CM 2.X API编写的脚本很可能无法在3.X上运行，除非进行手动干预。此外，项目中的CM摄像机实例本身也需要升级。",
+    "upgradingParagraphOne.comment": "Upgrading paragraph one",
+    "upgradingParagraphTwo": "虽然有可能从CM 2.X升级现有项目，但您应该仔细考虑是否愿意付出努力。在许多情况下，最好还是继续使用CM 2.X，在CM 3.X并行支持一段时间后继续支持。如果您选择升级项目，请参阅升级指南。",
+    "upgradingParagraphTwo.comment": "Upgrading paragraph two",
+    "upgradingParagraphThree": "Cinemachine 3.0以废弃形式继续支持已被新版本取代的过时CM2类。这是为了帮助您顺利过渡到新的API。然而，强烈建议您尽快将项目升级以使用新的API。废弃的类将在将来的版本中被移除。为了减少您的交付内容中的代码膨胀，您可以通过在项目的脚本定义符号中定义CINEMACHINE_NO_CM2_SUPPORT来立即删除废弃的类支持。",
+    "upgradingParagraphThree.comment": "Upgrading paragraph three",
+    "upgradingFromOldTitle": "从旧版Asset Store的Cinemachine升级",
+    "upgradingFromOldTitle.comment": "Upgrading from old title",
+    "upgradingFromOldParagraphOne": "如果您已经安装了Unity Asset Store中的一个非常旧版本的Cinemachine，那么您应该升级到Cinemachine Package。在这种情况下，建议您升级到Cinemachine 2.X，这在大多数情况下是完全自动的。",
+    "upgradingFromOldParagraphOne.comment": "Upgrading from old paragraph one",
+    "upgradingFromOldParagraphTwo": "要升级到Cinemachine Package：",
+    "upgradingFromOldParagraphTwo.comment": "Upgrading from old paragraph two",
+    "upgradingFromOldSteps": [
+      "在Unity编辑器中，2019.4或更高版本，打开您的项目。",
+      "保存您正在工作的当前场景。",
+      "创建一个新的空场景。",
+      "在项目窗口中，删除Cinemachine资产和您可能安装的任何Cinemachine后期处理适配器资产。",
+      "安装Cinemachine 2.X包。"
+    ],
+    "upgradingFromOldSteps.comment": "Upgrading from old Asset stores steps"
+  },
+
+  "UpgradingProjectFromCinemachine2X": {
+    "UpgradingProjectFromCinemachine2XTitle": "从Cinemachine 2.X升级项目",
+    "UpgradingProjectFromCinemachine2XParagraphOne": "Cinemachine 3.0是从CM 2.X到主要版本更改，API和数据格式已经发生了重大变化。针对CM 2.X API编写的脚本很可能无法在3.X上运行，除非进行手动干预。此外，项目中的CM对象数据本身也需要升级。",
+    "UpgradingProjectFromCinemachine2XParagraphTwo": "虽然有可能从CM 2.X升级现有项目，但您应该仔细考虑是否愿意付出努力。在许多情况下，最好还是继续使用CM 2.X，在CM 3.X并行支持一段时间后继续支持。如果您选择考虑升级项目，本指南将为您提供一些指示，使过程更加顺畅。",
+
+    "UpgradingYourProjectStepByStepTitle": "逐步升级您的项目",
+    "UpgradingYourProjectStepByStepParagraphOne": "以下是从CM 2.X升级现有项目的步骤：",
+    "UpgradingYourProjectStepByStepList": [
+      "备份您的项目。不要跳过此步骤。",
+      "使用包管理器将您的项目升级到CM3。如果您有使用Cinemachine API的自定义脚本，它们可能会中断。通过执行以下操作使它们重新编译：",
+      "1 更新使用Cinemachine声明。命名空间已更改为Unity.Cinemachine。",
+      "2 更新对重命名组件的任何引用。",
+      "3 更新损坏的CM字段名称。大多数情况下，这只意味着删除m_前缀。在其他情况下，可能需要做更多工作，但通过查看每种情况中的代码，应该可以清楚地了解要采取的适当操作。",
+      "4 此时，您的项目应该基本上像以前一样运行，使用废弃的类。",
+      "用于替换CinemachineVirtualCamera和CinemachineFreeLook的新CinemachineCamera类继承自CinemachineVirtualCameraBase。在可能的情况下，请替换您的脚本引用以使用此基类而不是派生类型。如果这样做，CM升级工具将能够保留现有对象引用，因为旧类和新类都继承自同一基类。",
+      "通过运行Cinemachine Upgrader来升级项目数据。您可以从任何CM VirtualCamera或FreeLook检查器中启动Cinemachine Upgrader工具。",
+      "因为CM组件类型已更改，您将不得不手动查看您的脚本，并更新任何特定引用以适应新类型。控制台日志是您的好帮手：\"废弃\"警告将指出需要注意的地方。",
+      "数据升级后，对象引用可能会中断。如果需要，您需要检查并修复它们。",
+      "如果您使用层来将摄像机过滤到单独的分屏大脑中，那么该过滤将停止工作，直到您升级为CinemachineCameras并将过滤切换到通道为止。"
+    ],
+    "UpgradingYourProjectStepByStepParagraphTwo": "注意：如果在任何阶段出现此类错误，请重新启动Unity：",
+
+    "WhatHasChangedInTheAPITitle": "API中的变化",
+    "WhatHasChangedInTheAPIParagraphOne": "一些组件被新组件替换，其他组件被重命名。字段名称已更改。命名空间已更改。对于这些问题中的大多数，您将在控制台中看到错误或弃用警告，这将指示您需要关注的代码区域。",
+    "WhatHasChangedInTheAPIParagraphTwo": "需要注意的一点是：用于替换CinemachineVirtualCamera和CinemachineFreeLook的新CinemachineCamera类继承自CinemachineVirtualCameraBase。如果可能的话，您可以替换您的脚本引用以尽可能使用此基类，那么在升级数据时，现有对象引用将被保留，因为旧类和新类都继承自同一基类。",
+
+    "NewNamespacesTitle": "新命名空间",
+    "NewNamespacesParagraphOne": "命名空间已更改，以更符合Unity标准。",
+    "NewNamespacesList": [
+      "Cinemachine现在是Unity.Cinemachine",
+      "Cinemachine.Editor现在是Unity.Cinemachine.Editor",
+      "Cinemachine.Utility已被合并到Unity.Cinemachine。"
+    ],
+
+    "NewComponentsWithClearerNamesTitle": "具有更清晰名称的新组件",
+    "NewComponentsWithClearerNamesParagraphOne": "旧组件已被新组件替换。这些不是重命名，而是新的组件类型。旧组件仍然存在，但已弃用。如果您的脚本引用了其中任何组件，则在完成数据升级后，它们将需要更新。",
+    "NewComponentsWithClearerNamesList": [
+      "CinemachineVirtualCamera被CinemachineCamera替换。",
+      "CinemachineFreeLook被CinemachineCamera替换。",
+      "CinemachinePath和CinemachineSmoothPath被Unity的新原生样条实现提供的Spline Container替换。",
+      "CinemachineDollyCart被CinemachineSplineCart替换。",
+      "CinemachineTransposer被CinemachineFollow替换。",
+      "CinemachineOrbitalTransposer被CinemachineOrbitalFollow替换",
+      "CinemachineFramingTransposer被CinemachinePositionComposer替换。",
+      "CinemachineComposer被CinemachineRotationComposer替换。",
+      "CinemachinePOV被CinemachinePanTilt替换。",
+      "CinemachineTrackedDolly被CinemachineSplineDolly替换。",
+      "CinemachineGroupComposer被与CinemachineRotationComposer配合使用的CinemachineGroupFraming扩展替换。",
+      "CinemachineCollider被CinemachineDeoccluder替换",
+      "CinemachineConfiner被CinemachineConfiner2D和CinemachineConfiner3D替换",
+      "Cinemachine3rdPersonFollow被CinemachineThirdPersonFollow替换。",
+      "CinemachineSameAsFollowTarget被CinemachineRotateWithFollowTarget替换。"
+    ],
+
+    "RenamedComponentsTitle": "重命名组件",
+    "RenamedComponentsList": [
+      "Cinemachine3rdPersonAim已更名为CinemachineThirdPersonAim。",
+      "CinemachineBlendListCamera已更名为Cinemachine Sequencer Camera。"
+    ],
+
+    "RenamedFieldsTitle": "重命名字段",
+    "RenamedFieldsParagraphOne": "从旧的\"m_FieldName\"约定已更改为遵循Unity的最新命名约定。因此，在所有地方都已删除了\"m_\"前缀。如果您的脚本由于此原因而无法编译，则首要解决方法是从您的脚本引用的字段名称中删除\"m_\"。大多数情况下，这将足够。偶尔，某些字段名称更改更为重大。找到适当的替换应该相当容易。",
+    "RenamedFieldsParagraphTwo": "SimpleFollowWithWorldUp绑定模式已重命名为LazyFollow。",
+
+    "CleanerObjectStructureNoHiddenGameObjectsTitle": "更干净的对象结构，没有隐藏的GameObject",
+    "CleanerObjectStructureNoHiddenGameObjectsParagraphOne": "Cinemachine 2.x在vcam的隐藏GameObject子级上实现了CM管道，命名为\"cm\"。这在CineMachine 3.0中已被移除，CM管道组件（如OrbitalFollow或RotationComposer）现在直接作为组件实现在CinemachineCamera GameObject上。您可以像访问任何其他组件一样访问它们：不再需要GetCinemcachineComponent()，只需使用GetComponent()。",
+    "CleanerObjectStructureNoHiddenGameObjectsParagraphTwo": "您现在将在层次结构中看到您遗留的CM vcam的cm子对象，因为CM3已将它们取消隐藏。这并不意味着您可以随意更改这些对象 - 它们之前被隐藏是有原因的。我们建议您通过将父对象升级为其CM3等效对象来摆脱它们。",
+
+    "NewInputHandlingTitle": "新输入处理",
+    "NewInputHandlingParagraphOne": "用户输入已与Cinemachine组件解耦：它们不再直接读取用户输入，而是期望由外部组件驱动。提供了CinemachineInputAxisController来执行此作业，但您也可以选择通过继承InputAxisControllerBase来实现自己的输入控制器。",
+
+    "NewEventsArchitectureTitle": "新事件架构",
+    "NewEventsArchitectureParagraphOne": "尽管CM2.X在CinemachineVirtualCamera和CinemachineBrain中具有事件，但CM3仅通过CinemachineCore触发全局事件。脚本可以向这些事件添加监听器，并根据它们采取行动。监听器将接收到所有摄像机和所有Brains的事件。",
+    "NewEventsArchitectureParagraphTwo": "现在支持特定于摄像机和Brain的事件，通过两个新行为实现：Cinemachine Brain Events和Cinemachine Camera Events。这些监视全局事件，并触发与其附加的对象相关的更专业的事件。",
+
+    "NewSplineImplementationTitle": "新样条实现",
+    "NewSplineImplementationParagraphOne": "Cinemachine的路径现在使用Unity的原生Splines实现，提供了等效的功能。Cinemachine Upgrader将自动将您的CM路径转换为Splines。CM路径实现仍然存在，但现已弃用。",
+
+    "DecoupledFromUnityLayersTitle": "与Unity层解耦",
+    "DecoupledFromUnityLayersParagraphOne": "在CM2中，CinemachineBrain仅会处理分配给与相关摄像机的culling mask中包含的层的CinemachineCameras。这种机制在诸如分屏之类的情况下非常有用，以使特定的CinemachineCameras分配给特定的Brains。在CM3中，这已被Cinemachine Channels取代。这些是仅Cinemachine使用的专用层，因此不会不必要地浪费Unity层。CinemachineCameras被分配到一个Cinemachine Channel，并且CinemachineBrain有一个通道掩码。通常情况下，使用\"Default\"通道，并且只需要在需要通道分离的特定情况下更改。",
+
+    "LensModeOverrideTitle": "镜头模式覆盖",
+    "LensModeOverrideParagraphOne": "如果您的项目正在使用镜头模式覆盖的虚拟摄像机（例如，在物理和透视和正交摄像机之间切换），那么在您启用模式覆盖并在CinemachineBrain中分配默认镜头模式之前，这将停止工作。",
+
+    "UpgradingTheProjectDataTitle": "升级项目数据",
+    "UpgradingTheProjectDataParagraphOne": "一旦脚本使用新的API，您就可以升级项目数据，将传统的CM对象转换为其CM3对应项。Cinemachine附带了一个数据升级工具来促进此操作。这不是一个简单的操作，因为除了场景中的vcam对象之外，还需要升级可能正在引用它们的预制件和动画资产。",
+    "UpgradingTheProjectDataParagraphTwo": "您可以从任何CM VirtualCamera或FreeLook检查器中启动Cinemachine Upgrader升级工具：",
+
+    "UpgradingASingleObjectTitle": "升级单个对象 Object",
+    "UpgradingASingleObjectParagraphOne": "如果您只想升级当前正在检查的Cinemachine对象，则只要它不是预制件实例，您就可以这样做。在这种情况下，它将仅升级已检查的对象，将它们替换为CM3等效项。支持撤消，因此您可以尝试一下，然后改变主意。",
+    "UpgradingASingleObjectParagraphTwo": "请注意，此对象的任何脚本引用都将丢失（因为类将更改），任何写入到此相机内部字段的动画轨道也将丢失（因为类和字段名称已更改）。引用此对象的时间轴将失去其绑定。如果您有脚本引用或动画轨道或如果此摄像机是预制件或预制件实例的一部分，则需要使用\"升级整个项目\"选项，该选项将扫描项目中的引用并进行适当的更新。",
+
+    "UpgradingASingleSceneTitle": "升级单个场景 Scene",
+    "UpgradingASingleSceneParagraphOne": "您还可以选择更新当前场景中的所有CM对象。同样，这不会更新场景外的任何资产，因此对于除最简单的场景之外的任何场景都不适用。此操作也支持撤消。",
+
+    "UpgradingTheWholeProjectTitle": "升级整个项目",
+    "UpgradingTheWholeProjectParagraphOne": "“升级整个项目”选项将升级所有场景和所有预制件中的所有对象。有逻辑来处理动画轨道、脚本引用和预制件实例。这是一个重要的操作，项目中的每个场景和预制件都将被打开和保存多次。不支持撤消，因此请务必先进行完整备份。"
+  },
+
+  "GetStarted": {
+    "title": "开始使用Cinemachine",
+    "paragraphOne": "获取必要的信息，了解Cinemachine的工作原理，并按照说明设置最小功能层，以在项目中开始使用Cinemachine。",
+    "sections": [
+      "Cinemachine核心概念",
+      "设置基本的Cinemachine环境",
+      "设置多个Cinemachine摄像机和过渡",
+      "向Cinemachine摄像机添加程序化行为",
+      "在Cinemachine摄像机中设置时间线",
+      "使用方便的工具和快捷方式"
+    ],
+    "descriptions": [
+      "了解Cinemachine的基本要素和核心功能。",
+      "设置Unity项目，以包含最低所需元素，以建立功能性的Cinemachine环境。",
+      "设置具有多个Cinemachine摄像机的Cinemachine环境，并管理它们之间的过渡。",
+      "向Cinemachine摄像机添加程序化行为，使其跟随目标、抖动等。",
+      "在Cinemachine环境中设置时间线，编排Cinemachine摄像机，生成可预测的镜头序列。",
+      "使用界面工具和快捷方式，并针对您的需求定位正确的Cinemachine元素进行设置，以简化配置体验。"
+    ]
+  },
+  "DiscoverConcepts": {
+    "title": "探索Cinemachine概念",
+    "paragraphOne": "了解Cinemachine的基本元素和核心功能。",
+    "sections": [
+      "Cinemachine基本元素",
+      "相机控制与切换",
+      "程序化运动",
+      "Cinemachine与时间轴"
+    ],
+    "descriptions": [
+      "构建一个功能性Cinemachine环境所需的基本元素：Unity相机、Cinemachine大脑、Cinemachine相机。",
+      "Cinemachine相机轮流控制Unity相机并通过混合或剪切进行切换的条件和机制。",
+      "程序化行为和扩展如何使Cinemachine相机动态移动、摇晃、跟踪目标、构图、响应用户输入、沿预定义路径移动、对外部冲击信号做出反应、产生后期处理效果等。",
+      "当您需要通过编排相机制作可预测的镜头序列时，Cinemachine相机如何与时间轴配合工作。"
+    ]
+  },
+  "EssentialElements": {
+    "title": "Cinemachine 基本元素",
+    "paragraphOne": "了解构建一个功能性 Cinemachine 环境所需的基本元素。",
+    "subtitleOne": "概述",
+    "paragraphTwo": "一个功能性的 Cinemachine 设置涉及三种主要类型的元素：",
+    "listOne": [
+      "单个 Unity 相机，用于捕捉场景中的图像，",
+      "一个 Cinemachine 大脑，用于在 Unity 相机中启用 Cinemachine 功能，",
+      "一个或多个 Cinemachine 相机，它们根据其状态轮流控制 Unity 相机。"
+    ],
+    "paragraphThree": "Cinemachine 设置示例：包含 Cinemachine 大脑组件和三个 Cinemachine 相机的 Unity 相机。",
+    "subtitleTwo": "Unity 相机",
+    "paragraphFour": "Unity 相机是包含相机组件的游戏对象，与包含其他类型组件以控制 Unity 相机的 Cinemachine 相机不同。",
+    "paragraphFive": "一个 Cinemachine 设置必须仅包含一个 Unity 相机，它是唯一一个从场景中捕捉图像的游戏对象，而 Cinemachine 相机控制它。",
+    "subtitleThree": "Cinemachine 大脑",
+    "paragraphSix": "要使用 Cinemachine，Unity 相机游戏对象必须包含一个 Cinemachine 大脑组件。该组件主要负责：",
+    "listTwo": [
+      "监控场景中所有活动的 Cinemachine 相机。",
+      "确定哪个 Cinemachine 相机控制 Unity 相机。",
+      "处理另一个 Cinemachine 相机接管 Unity 相机控制时的过渡。"
+    ],
+    "noteOne": "当您使用时间轴获取编排的 Cinemachine 相机镜头序列时，时间轴会覆盖 Cinemachine 大脑的优先级和过渡管理。",
+    "subtitleFour": "Cinemachine 相机",
+    "paragraphSeven": "Cinemachine 相机（以前称为虚拟相机）是充当相机占位符的游戏对象，根据其状态准备接管 Unity 相机的控制。",
+    "paragraphEight": "当一个 Cinemachine 相机接管 Unity 相机时，它会动态覆盖其属性和行为，影响：",
+    "listThree": [
+      "Unity 相机在场景中的位置。",
+      "Unity 相机的目标。",
+      "Unity 相机随着时间的行为。"
+    ],
+    "subtitleFive": "Cinemachine 相机游戏对象",
+    "paragraphNine": "Cinemachine 相机游戏对象与 Unity 相机游戏对象是独立的。",
+    "listFour": [
+      "它们独立运行，不能相互嵌套。",
+      "它们不包含相机组件，与 Unity 相机游戏对象不同。",
+      "它们必须包含 Cinemachine 相机组件。",
+      "它们可以包含额外的 Cinemachine 组件以管理程序化运动并添加扩展功能。"
+    ],
+    "paragraphTen": "层次结构示例：包含一个带有 Cinemachine 大脑和多个 Cinemachine 相机的 Unity 相机的场景。",
+    "subtitleSix": "单个或多个 Cinemachine 相机",
+    "paragraphEleven": "您可以根据项目需求创建尽可能多的 Cinemachine 相机，但也可以使用单个 Cinemachine 相机来获得一个完全功能的设置。例如：",
+    "listFive": [
+      "如果您希望 Unity 相机跟随单个角色，可以使用单个 Cinemachine 相机并根据需要设置跟随行为。最终，这个 Cinemachine 相机将是唯一控制 Unity 相机的相机。",
+      "如果您的项目需要多个地点的多个镜头，应为每个镜头创建一个 Cinemachine 相机，无论是否具有特定的程序化行为。在这种情况下，您需要了解 Unity 如何处理 Cinemachine 相机的激活和过渡。"
+    ],
+    "subtitleSeven": "处理能力消耗",
+    "paragraphTwelve": "Cinemachine 鼓励您创建多个 Cinemachine 相机。Cinemachine 相机设计为消耗较少的处理能力。如果您的场景对性能敏感，请在任何时候仅激活必要的 Cinemachine 相机以获得最佳性能。",
+    "subtitleEight": "附加资源",
+    "paragraphThirteen": "设置基本的 Cinemachine 环境"
+  },
+  "ControlAndTransations": {
+    "title": "相机控制与过渡",
+    "paragraphOne": "了解使 Cinemachine 相机轮流控制 Unity 相机并通过混合或切换进行过渡的条件和机制。",
+    "subtitleOne": "Cinemachine 相机状态",
+    "paragraphTwo": "在任何时候，每个 Cinemachine 相机可能处于三种不同状态中的一种，但只有一个是活动的（Live），并控制 Unity 相机，除非发生过渡。",
+    "states": ["活动（Live）", "待机（Standby）", "禁用（Disabled）"],
+    "descriptions": [
+      "Cinemachine 相机积极控制具有 Cinemachine 大脑的 Unity 相机。当从一个 Cinemachine 相机过渡到另一个时，两个 Cinemachine 相机都是活动的。当过渡完成时，只有一个活动的 Cinemachine 相机。",
+      "Cinemachine 相机不控制 Unity 相机。但它仍然跟随并瞄准其目标并更新。处于此状态的 Cinemachine 相机其游戏对象是激活的，且优先级与活动的 Cinemachine 相机相同或更低。",
+      "Cinemachine 相机不控制 Unity 相机，也不积极跟随或瞄准其目标。处于此状态的 Cinemachine 相机不消耗处理能力。要禁用 Cinemachine 相机，请停用其游戏对象。Cinemachine 相机仍存在但在场景中被禁用。然而，即使游戏对象被停用，Cinemachine 相机仍可控制 Unity 相机，如果该 Cinemachine 相机参与过渡或被时间轴调用。"
+    ],
+    "subtitleTwo": "选择活动的 Cinemachine 相机",
+    "paragraphThree": "选择活动 Cinemachine 相机的条件取决于使用 Cinemachine 的上下文。默认情况下，Cinemachine 大脑负责处理活动 Cinemachine 相机的选择。",
+    "listOne": [
+      "大脑选择优先级最高的活动 Cinemachine 相机组件并使其处于活动状态。",
+      "如果多个活动的 Cinemachine 相机具有相同的最高优先级，则选择最近激活的那个。",
+      "处于过渡中的停用或低优先级 Cinemachine 相机可以是活动状态，直到过渡完成。",
+      "如果时间轴中包含 Cinemachine 轨道，它会覆盖大脑的优先级系统，并显式驱动活动相机和过渡，而不考虑其优先级和活动状态。"
+    ],
+    "subtitleThree": "实时动态事件",
+    "paragraphFour": "您可以通过操控 Cinemachine 相机的优先级或激活和停用其游戏对象来响应实时动态游戏事件。这在实时游戏中特别有用，因为行动并不总是可预测的。",
+    "subtitleFour": "时间轴",
+    "paragraphFive": "使用时间轴与 Cinemachine 配合，以在可预测的情况下（如过场动画）编排 Cinemachine 相机和管理镜头。",
+    "paragraphSix": "当您使用时间轴与 Cinemachine 相机时，时间轴会覆盖 Cinemachine 大脑的优先级系统，这意味着当 Cinemachine 相机剪辑处于活动状态时，Cinemachine 相机的优先级和活动状态会被忽略。活动 Cinemachine 相机的选择基于特定 Cinemachine 相机剪辑的激活，使您能够精确到每一帧地控制相机。",
+    "subtitleFive": "Cinemachine 相机过渡",
+    "paragraphSeven": "每次新的 Cinemachine 相机变为活动时，您可以管理 Cinemachine 相机之间的过渡。",
+    "paragraphEight": "根据使用 Cinemachine 的上下文，设置 Cinemachine 相机过渡的方式不同：",
+    "listTwo": [
+      "默认情况下，您在 Cinemachine 大脑组件中处理过渡规则。",
+      "当您使用时间轴进行镜头序列时，您直接在时间轴 Cinemachine 轨道中处理过渡。"
+    ],
+    "subtitleSix": "混合",
+    "paragraphNine": "混合允许您通过结合相对简单的镜头并在它们之间进行过渡来创建复杂的相机运动，以响应实时游戏事件或通过时间轴编排。",
+    "paragraphTen": "Cinemachine 混合不是淡入、擦除或溶解。相反，Cinemachine 对 Unity 相机从一个 Cinemachine 相机到下一个的位置信息、旋转和其他设置进行平滑动画处理，注意保持目标对象的视图，并尊重上方向。",
+    "paragraphEleven": "混合：两个 Cinemachine 相机在混合期间同时控制 Unity 相机，在预定时间内平滑地交换完全控制。",
+    "subtitleSeven": "切换",
+    "paragraphTwelve": "切换本质上是从一个镜头到另一个的突然过渡。在 Cinemachine 中，两台 Cinemachine 相机之间的切换相当于瞬时发生的过渡，没有 Cinemachine 相机属性之间的平滑过渡。",
+    "paragraphThirteen": "切换示例：两台 Cinemachine 相机轮流立即控制 Unity 相机。",
+    "subtitleEight": "附加资源",
+    "paragraphFourteen": "设置多个 Cinemachine 相机和过渡"
+  },
+  "ProceduralMotion": {
+    "title": "程序化运动",
+    "paragraphOne": "Cinemachine 摄像机本身是一个被动的游戏对象，作为摄像机占位符，您可以例如：",
+    "listOne": [
+      "放置在固定位置并进行静态瞄准。",
+      "附加到另一个游戏对象，使其随之移动和旋转。",
+      "通过自定义脚本操作其移动和旋转，并控制其镜头。"
+    ],
+    "paragraphTwo": "然而，为了获得更复杂的效果，您可以向任何 Cinemachine 摄像机添加程序化行为和扩展，使其动态移动、抖动、跟踪目标、构图、响应用户输入、沿预定义路径移动、响应外部冲击信号、生成后期处理效果等。",
+    "subtitleOne": "程序化行为和扩展",
+    "paragraphThree": "Cinemachine 摄像机组件允许您选择多种行为和扩展来驱动 Cinemachine 摄像机的位置、旋转和镜头。",
+    "subtitleOneOne": "位置和旋转控制",
+    "paragraphFour": "选择和配置位置控制和旋转控制行为，使 Cinemachine 摄像机根据某些约束或标准移动和瞄准 Unity 摄像机。",
+    "paragraphFive": "大多数可用的行为旨在跟踪或观察目标游戏对象。此外，一些行为支持用户输入以使摄像机环绕或旋转。",
+    "paragraphSix": "使用这些行为，您可以：",
+    "listTwo": [
+      "以固定偏移、轨道配置或第三人称或第一人称模式跟踪目标。",
+      "使用自适应摄像机位置和旋转进行构图，或使用集中式硬观察，保持目标在摄像机画面中。",
+      "将目标的位置和旋转应用到摄像机，而不是将目标放在摄像机画面中。",
+      "沿预定义的样条线移动摄像机，以模拟轨道摄像机路径。",
+      "围绕可配置的平移和倾斜轴旋转摄像机。"
+    ],
+    "subtitleOneTwo": "噪声",
+    "paragraphSeven": "选择和配置噪声行为，使 Cinemachine 摄像机抖动并模拟现实世界的物理摄像机特性，以达到电影效果。",
+    "paragraphEight": "在每个帧更新时，Cinemachine 会在跟踪目标的摄像机运动之外添加噪声。噪声不会影响未来帧中的摄像机位置。这种分离确保了诸如阻尼之类的属性按预期行为。",
+    "subtitleOneThree": "扩展",
+    "paragraphNine": "添加扩展以增强 Cinemachine 摄像机的行为，以满足更具体或更高级的需求。",
+    "paragraphTen": "例如，遮挡移除扩展会移动摄像机，以避开阻碍摄像机视线的游戏对象。",
+    "paragraphEleven": "以下是所有可用的 Cinemachine 摄像机扩展列表：",
+    "listThree": [
+      "Cinemachine 自动对焦",
+      "Cinemachine 3D 限定器",
+      "Cinemachine 2D 限定器",
+      "Cinemachine 撞击移除器",
+      "Cinemachine 遮挡移除器",
+      "Cinemachine 跟随变焦",
+      "Cinemachine 自由视角修饰器",
+      "Cinemachine 组框架",
+      "Cinemachine 像素完美",
+      "Cinemachine 后期处理",
+      "Cinemachine 重构器",
+      "Cinemachine 镜头质量评估器",
+      "Cinemachine 故事板",
+      "Cinemachine 第三人称瞄准",
+      "Cinemachine 体积设置"
+    ],
+    "subtitleTwo": "目标游戏对象跟踪",
+    "paragraphTwelve": "目标游戏对象跟踪是定义程序化运动的关键元素。偏移和屏幕构图是相对于这些目标指定的，因此当目标在世界中移动时，摄像机会调整自己以保持镜头。",
+    "subtitleTwoOne": "跟踪目标和观察目标属性",
+    "paragraphThirteen": "默认情况下，Cinemachine 摄像机有一个单一的跟踪目标属性，其有两个目的：",
+    "listFour": [
+      "当您定义需要位置控制行为时，它指定 Cinemachine 摄像机随之移动的变换。",
+      "它指定观察目标，当您定义需要它的旋转控制行为时，这是要瞄准的变换。"
+    ],
+    "noteOne": "如果您需要为这些目的使用两个不同的变换，请通过跟踪目标字段右侧的按钮选择使用单独的观察目标选项。",
+    "subtitleTwoTwo": "目标跟踪和混合",
+    "paragraphFourteen": "目标在 Cinemachine 在镜头之间进行混合时也很重要。Cinemachine 尝试保持目标的期望屏幕位置，如果镜头之间目标改变，Cinemachine 会在目标位置之间进行插值。",
+    "paragraphFifteen": "如果没有为摄像机混合指定目标，那么 Cinemachine 只能独立地插值位置和旋转，这通常会导致兴趣对象在屏幕上以不理想的方式移动。如果 Cinemachine 知道兴趣对象是什么，它可以纠正这个问题。",
+    "subtitleThree": "行为和扩展选择",
+    "paragraphSixteen": "当您从 Cinemachine 摄像机组件中选择行为或添加扩展时，Unity 会自动向 Cinemachine 摄像机游戏对象添加额外组件。要修改 Cinemachine 摄像机行为，您必须编辑这些附加组件的属性。",
+    "noteTwo": "您可以通过手动添加这些组件作为任何其他游戏对象组件来获得相同的结果。",
+    "paragraphSeventeen": "如果没有程序化组件，Cinemachine 摄像机通过其变换控制 Unity 摄像机的位置和旋转。",
+    "subtitleThreeOne": "自定义行为和扩展",
+    "paragraphEighteen": "您可以编写继承 CinemachineComponentBase 或 CinemachineExtension 类的自定义脚本，以实现您自己的自定义移动行为或扩展。当您创建这样的行为或扩展时，它会自动在现有的行为或扩展中可供选择。",
+    "subtitleFour": "其他资源",
+    "paragraphNineteen": "向 Cinemachine 摄像机添加程序化行为"
+  },
+  "CinemachineAndTimeline": {
+    "title": "Cinemachine 和 Timeline",
+    "paragraphOne": "使用 Timeline 来激活、停用并在 Cinemachine 摄像机之间进行混合，当您需要使用编排摄像机制作可预测的镜头序列时。",
+    "paragraphTwo": "提示：对于简单的镜头序列，您也可以使用 Cinemachine Sequencer Camera 而不是 Timeline。",
+    "subtitleOne": "实时 Cinemachine 摄像机选择",
+    "paragraphThree": "当 Timeline 驱动 Cinemachine 时，它会覆盖 Cinemachine Brain 做出的基于优先级的决策。当 Timeline 结束时，或者至少当 Timeline 当前没有驱动 Cinemachine 时，控制权返回给 Cinemachine Brain。",
+    "subtitleTwo": "Cinemachine 轨道和镜头剪辑",
+    "paragraphFour": "Timeline 通过 Cinemachine 轨道中的 Cinemachine 镜头剪辑来控制 Cinemachine 摄像机。每个镜头剪辑指向一个要激活然后停用的 Cinemachine 摄像机。使用一系列镜头剪辑来指定每个镜头的顺序和持续时间。",
+    "subtitleThree": "Cinemachine 摄像机过渡",
+    "paragraphFive": "要在两个 Cinemachine 摄像机之间进行切换，将剪辑放在彼此旁边。",
+    "paragraphSix": "要在两个 Cinemachine 摄像机之间进行混合，请重叠剪辑。",
+    "paragraphSeven": "示例：Timeline 中的 Cinemachine 镜头剪辑，Shots A-B 之间的切换和 Shots B-C 之间的混合。",
+    "subtitleFour": "多个 Cinemachine 轨道",
+    "paragraphEight": "在同一个 Timeline 中可以有多个 Cinemachine 轨道。下方的轨道覆盖上方轨道的任何内容。",
+    "paragraphNine": "当较低轨道的镜头在较高的 Cinemachine 镜头剪辑激活时变为活动状态时，您可以用另一个镜头中断该镜头。",
+    "paragraphTen": "也可以有多个带有 Cinemachine 轨道的 Timeline。在这种情况下，最近激活的 Timeline 覆盖其他 Timeline，控制权在覆盖 Timeline 没有 Cinemachine 摄像机剪辑激活的地方恢复到以前的 Timeline。",
+    "subtitleFive": "与其他 Cinemachine 轨道和 Brain 进行混合",
+    "paragraphEleven": "您可以将一个 Cinemachine 镜头剪辑与另一个独立的 Cinemachine 轨道中的镜头剪辑，甚至与 Cinemachine Brain 当前识别为实时的 Cinemachine 摄像机进行混合。",
+    "paragraphTwelve": "为此，请在 Inspector 中更改剪辑的 Ease In Duration 和 Ease Out Duration 时间值。",
+    "subtitleSix": "其他资源",
+    "paragraphThirteen": "设置带有 Cinemachine 摄像机的 Timeline"
+  },
+
+  "SetupEnvironment": {
+    "title": "设置基础的 Cinemachine 环境",
+    "paragraphOne": "设置您的 Unity 项目，使其包含创建功能性 Cinemachine 环境所需的最低要素：",
+    "listOne": [
+      "创建一个被动的 Cinemachine 摄像机 – 本身没有特定行为，",
+      "确保 Unity 摄像机中存在 Cinemachine Brain，并且",
+      "调整 Cinemachine 摄像机属性，查看其如何影响 Unity 摄像机。"
+    ],
+    "noteOne": "您的场景中必须只有一个 Unity 摄像机 – 一个带有摄像机组件的 GameObject。",
+    "subtitleOne": "添加一个 Cinemachine 摄像机",
+    "paragraphTwo": "在场景视图中，导航到您想要用 Cinemachine 摄像机框住的视角。",
+    "paragraphThree": "在 Unity 菜单中，选择 GameObject > Cinemachine > Cinemachine Camera。Unity 会添加一个新的 GameObject，带有：",
+    "listTwo": [
+      "一个 Cinemachine 摄像机组件，和",
+      "一个与场景视图摄像机的最新位置和方向匹配的 Transform。"
+    ],
+    "subtitleTwo": "验证 Cinemachine Brain 的存在",
+    "paragraphFour": "当您在场景中创建第一个 Cinemachine 摄像机时，Unity 会自动将 Cinemachine Brain 添加到 Unity 摄像机中，除非 Unity 摄像机已经包含一个。要验证这一点：",
+    "paragraphFive": "在层级视图中，选择您的 Unity 摄像机 – 包含摄像机组件的 GameObject。",
+    "paragraphSix": "在检查器中，验证该 GameObject 包含一个 Cinemachine Brain 组件。",
+    "noteTwo": "如果需要，您可以像添加任何其他组件一样手动将 Cinemachine Brain 组件添加到 Unity 摄像机 GameObject，但请记住，场景中只能有一个 Unity 摄像机包含 Cinemachine Brain。",
+    "noteThree": "一旦 Cinemachine Brain 存在，Unity 摄像机的变换和镜头设置将被锁定，不能直接在摄像机检查器中更改。您只能通过更改 CinemachineCamera 的相应属性来更改这些摄像机属性。",
+    "subtitleThree": "调整 Cinemachine 摄像机属性",
+    "paragraphSeven": "打开游戏视图。它根据当前 Cinemachine 摄像机的设置，通过 Unity 摄像机的镜头显示场景。",
+    "paragraphEight": "在层级视图中，选择 Cinemachine 摄像机 GameObject。",
+    "paragraphNine": "在检查器中，调整属性以根据您的需求精确框住镜头：",
+    "listThree": [
+      "在变换中，调整位置和旋转。",
+      "在 Cinemachine 摄像机组件中，调整镜头属性。"
+    ],
+    "noteFour": "这是您创建的唯一且最新的 Cinemachine 摄像机，因此被启用。结果，Unity 摄像机会自动继承您对该 Cinemachine 摄像机进行的更改。",
+    "subtitleFour": "下一步",
+    "paragraphTen": "以下是您可能想要执行的潜在任务：",
+    "listFour": [
+      "创建多个 Cinemachine 摄像机并管理它们之间的过渡。",
+      "创建具有程序行为的 Cinemachine 摄像机：例如一个跟随角色的摄像机。",
+      "使用时间轴管理 Cinemachine 摄像机镜头的编排序列。"
+    ]
+  },
+  "SetupMultipleCam": {
+    "title": "设置多个 Cinemachine 相机和过渡",
+    "paragraphOne": "设置具有多个 Cinemachine 相机的 Cinemachine 环境，并管理相机控制和过渡：",
+    "listOne": [
+      "创建具有不同属性的多个 Cinemachine 相机，",
+      "在 Cinemachine Brain 中管理 Cinemachine 相机过渡，和",
+      "在运行模式下测试实时相机激活机制和过渡。"
+    ],
+    "noteOne": "您的场景必须仅包含一个 Unity 相机 - 一个具有相机组件的游戏对象。",
+    "subtitleOne": "添加 Cinemachine 相机",
+    "paragraphTwo": "在场景视图中，导航场景以获得您想要使用一个 Cinemachine 相机框定的视角。",
+    "paragraphThree": "在 Unity 菜单中，选择 GameObject > Cinemachine > Cinemachine Camera。 Unity 添加了一个带有 Cinemachine Camera 组件的新游戏对象，并且该对象的变换与场景视图相机的最新位置和方向匹配。此时，您还可以验证 Unity 相机是否包含 Cinemachine Brain 组件。",
+    "paragraphFour": "继续导航场景，并以相同的方式创建一些额外的 Cinemachine 相机，但位置和旋转不同。",
+    "paragraphFive": "以便于将来轻松识别它们的方式命名 Cinemachine 相机。",
+    "subtitleTwo": "管理 Cinemachine 相机之间的过渡",
+    "paragraphSix": "在层次结构中，选择您的 Unity 相机 - 包含相机组件的游戏对象。",
+    "paragraphSeven": "在检查器中，在 Cinemachine Brain 组件中：",
+    "listTwo": [
+      "选择在所有 Cinemachine 相机之间使用的默认混合，或",
+      "创建并定位一个定义在特定 Cinemachine 相机对之间使用的自定义混合的资产。"
+    ],
+    "subtitleThree": "在运行模式下测试过渡",
+    "paragraphEight": "进入运行模式。",
+    "paragraphNine": "依次更改每个 Cinemachine 相机游戏对象的活动状态，以查看它们根据您设置 Cinemachine Brain 的方式如何相互混合。",
+    "paragraphTen": "退出播放模式。",
+    "subtitleFour": "后续步骤",
+    "paragraphEleven": "以下是您现在可能想要执行的潜在任务：",
+    "listThree": [
+      "创建一个具有程序行为的 Cinemachine 相机：例如一个跟随角色的相机。",
+      "使用时间轴管理 Cinemachine 相机镜头的编排序列。"
+    ]
+  },
+  "SetupProceduralBehavior": {
+    "title": "为 Cinemachine 摄像机添加程序化行为",
+    "paragraphOne": "为 Cinemachine 摄像机设置程序化行为：",
+    "listOne": [
+      "添加行为以控制摄像机位置和旋转，",
+      "指定要跟踪的 GameObject 以实现自动跟随和瞄准，",
+      "添加默认噪音以模拟真实世界的物理摄像机抖动，",
+      "了解如何添加扩展以获得高级摄像机行为。"
+    ],
+    "noteOne": "此任务需要一些准备工作：",
+    "listTwo": [
+      "您必须至少创建一个被动的 Cinemachine 摄像机，并且",
+      "您的场景中必须已经包含一个可以用 Cinemachine 摄像机跟踪的 GameObject。"
+    ],
+    "subtitleOne": "添加位置控制和旋转控制行为",
+    "paragraphTwo": "在层级视图中，选择 Cinemachine 摄像机 GameObject。",
+    "paragraphThree": "在检查器中，在 Cinemachine 摄像机组件中，将 Position Control 属性设置为 Follow。Unity 会将 Cinemachine Follow 组件添加到 GameObject。",
+    "paragraphFour": "仍在 Cinemachine 摄像机组件中，将 Rotation Control 属性设置为 Rotation Composer。Unity 会将 Cinemachine Rotation Composer 组件添加到 GameObject。",
+    "noteTwo": "当您直接从编辑器菜单创建跟随摄像机时，您会得到相同的结果：GameObject > Cinemachine > Targeted Cameras > Follow Camera。这里的目标是展示如何向现有的 Cinemachine 摄像机添加行为。",
+    "paragraphFive": "请参阅 Cinemachine 摄像机组件参考，获取可用的位置控制和旋转控制行为列表，并访问其详细描述。",
+    "warningOne": "Cinemachine 摄像机 GameObject 一次只能选择一个位置控制行为和一个旋转控制行为。如果您编辑了行为组件的属性，然后从 Cinemachine 摄像机组件中选择了另一个行为，您的编辑将丢失。",
+    "subtitleTwo": "指定要跟踪的 GameObject",
+    "paragraphSix": "上一步中选择的行为需要一个跟踪目标。为满足此要求：",
+    "paragraphSeven": "在检查器中，在 Cinemachine 摄像机组件中，将 Tracking Target 属性设置为要跟踪的 GameObject。",
+    "paragraphEight": "在场景中移动目标 GameObject 以测试 Cinemachine 摄像机行为。Cinemachine 摄像机根据跟随行为自动将 Cinemachine 摄像机定位在该 GameObject 的相对位置，并根据旋转作曲家行为旋转摄像机以查看 GameObject。",
+    "subtitleThree": "添加摄像机抖动的噪音",
+    "paragraphNine": "可选地添加噪音以模拟真实世界的物理摄像机抖动：",
+    "paragraphTen": "在检查器中，在 Cinemachine 摄像机组件中，将 Noise 属性设置为 Basic Multi Channel Perlin。Unity 会将 Cinemachine Basic Multi Channel Perlin 组件添加到 GameObject。",
+    "paragraphEleven": "在 Cinemachine Basic Multi Channel Perlin 组件中，点击 Noise Profile 右侧的配置按钮。",
+    "paragraphTwelve": "在 Presets 下，选择一个现有的噪音设置资源。",
+    "paragraphThirteen": "进入播放模式以查看所选噪音配置文件对摄像机的影响，然后退出播放模式。",
+    "warningTwo": "如果您编辑了 Cinemachine Basic Multi Channel Perlin 组件的属性，然后从 Cinemachine 摄像机组件中更改了噪音选择，您的编辑将丢失。",
+    "paragraphFourteen": "有关进一步的噪音行为调整，请参阅 Cinemachine Basic Multi Channel Perlin 组件参考和噪音设置资源参考。",
+    "subtitleFour": "添加 Cinemachine 摄像机扩展",
+    "paragraphFifteen": "当您需要获得特定或高级行为时，可选择性地向 Cinemachine 摄像机添加扩展：",
+    "paragraphSixteen": "在检查器中，在 Cinemachine 摄像机组件中，点击 Add Extension 右侧的 (select)。",
+    "paragraphSeventeen": "在列表中选择一个扩展。Unity 会将相应的扩展组件添加到 GameObject。",
+    "noteThree": "您可以根据需要向同一个 Cinemachine 摄像机 GameObject 添加任意数量的扩展。您可以像删除任何其他 GameObject 组件一样删除扩展。",
+    "paragraphEighteen": "请参阅参考，获取所有可用的 Cinemachine 摄像机扩展列表，并访问其详细描述。",
+    "subtitleFive": "后续步骤",
+    "paragraphNineteen": "以下是您现在可能要做的一些任务：",
+    "listThree": [
+      "创建多个 Cinemachine 摄像机并管理它们之间的过渡。",
+      "使用时间轴管理 Cinemachine 摄像机镜头的编排序列。"
+    ]
+  },
+  "SetupTimeline": {
+    "title": "使用 Cinemachine 摄像机设置时间轴",
+    "paragraphOne": "在 Cinemachine 环境中设置时间轴以编排 Cinemachine 摄像机并产生可预测的镜头序列：",
+    "listOne": [
+      "准备多个 Cinemachine 摄像机以支持各种镜头，",
+      "准备时间轴，创建 Cinemachine 轨道，并添加 Cinemachine 镜头剪辑，以及",
+      "管理镜头切换和混合。"
+    ],
+    "subtitleOne": "准备 Cinemachine 摄像机",
+    "paragraphTwo": "在层次视图中，根据您想要获取的镜头创建一些具有不同属性的静态或程序化的 Cinemachine 摄像机。",
+    "paragraphThree": "以一种您将来可以轻松识别的方式命名 Cinemachine 摄像机。",
+    "subtitleTwo": "准备时间轴",
+    "paragraphFour": "在您的场景中创建一个空的 GameObject：从编辑器菜单中选择 GameObject > Create Empty。",
+    "paragraphFive": "给这个空的 GameObject 一个描述性的名称，例如，“我的时间轴”。",
+    "paragraphSix": "如果时间轴窗口尚未打开，请打开它，并为“我的时间轴”GameObject 创建一个时间轴资产和实例。",
+    "paragraphSeven": "点击锁定按钮以锁定时间轴窗口，使其更容易添加和调整轨道。",
+    "paragraphEight": "如果需要，添加控制场景对象的轨道。例如，添加一个动画轨道来为您的主角设置动画。",
+    "subtitleThree": "创建一个包含 Cinemachine 镜头剪辑的 Cinemachine 轨道",
+    "paragraphNine": "从层次视图中，将包含 Cinemachine Brain 组件的 Unity 摄像机 GameObject 拖动到时间轴编辑器，然后选择创建 Cinemachine 轨道。Unity 会在时间轴中添加一个针对 Unity 摄像机的 Cinemachine 轨道。",
+    "paragraphTen": "从层次视图中，将第一个 Cinemachine 摄像机 GameObject 拖动到添加的 Cinemachine 轨道上。Unity 会在 Cinemachine 轨道上添加一个针对您选择的 Cinemachine 摄像机的 Cinemachine 镜头剪辑。",
+    "paragraphEleven": "根据需要多次重复上一步，将其他 Cinemachine 摄像机添加到 Cinemachine 轨道上，以获取更多的 Cinemachine 镜头剪辑。",
+    "noteOne": "您可以在时间轴中将同一个 Cinemachine 摄像机多次重复使用，在不同时间点放置在不同的 Cinemachine 镜头剪辑中。",
+    "paragraphTwelve": "根据所需的镜头序列调整 Cinemachine 镜头剪辑的顺序和持续时间。",
+    "subtitleFour": "创建镜头切换",
+    "paragraphThirteen": "要在两个镜头之间进行镜头切换：",
+    "paragraphFourteen": "将两个 Cinemachine 镜头剪辑放置或编辑它们的边界，使剪辑彼此紧贴而不重叠。",
+    "subtitleFive": "创建镜头混合",
+    "paragraphFifteen": "要使 Cinemachine 摄像机在两个镜头之间混合它们的属性：",
+    "paragraphSixteen": "移动两个 Cinemachine 镜头剪辑或编辑它们的边界，使剪辑重叠。",
+    "paragraphSeventeen": "重叠区域定义了混合的持续时间。"
+  },
+  "UseToolsAndShortcuts": {
+    "title": "使用便捷工具和快捷方式",
+    "paragraphOne": "Cinemachine 包含多个用户界面工具和快捷方式，帮助您根据需要定位适当的 Cinemachine 元素并简化配置体验。",
+    "features": ["预制相机", "场景处理", "在运行模式下保存"],
+    "descriptions": [
+      "使用菜单快捷方式创建针对特定用例的预制 Cinemachine 相机。",
+      "使用一组 3D 控件在场景视图中可视化地操纵 CinemachineCamera 参数。",
+      "允许 Unity 编辑器保存您在运行模式下进行的 Cinemachine 参数更改。"
+    ]
+  },
+  "PreBuiltCameras": {
+    "title": "预制 Cinemachine 相机",
+    "paragraphOne": "Cinemachine 包含一系列快捷方式，用于预制 Cinemachine 相机，以满足特定的使用情景。要使用预制 Cinemachine 相机，请从编辑器菜单中选择 GameObject > Cinemachine，然后根据以下列表选择相机类型：",
+    "menuItems": [
+      "状态驱动相机",
+      "定向相机 > 跟随相机",
+      "定向相机 > 目标组相机",
+      "定向相机 > 自由视角相机",
+      "定向相机 > 第三人称瞄准相机",
+      "定向相机 > 2D 相机",
+      "Cinemachine 相机",
+      "序列相机",
+      "轨道摄影机与样条",
+      "手推车与样条",
+      "混合相机",
+      "清晰相机"
+    ],
+    "descriptions": [
+      "创建一个管理相机，将一组 Cinemachine 相机作为子对象，并根据动画状态更改对它们进行处理。",
+      "创建一个具有预选行为的 Cinemachine 相机，适合于跟随和定位角色。",
+      "创建一个具有预选行为和扩展的 Cinemachine 相机，适合于跟踪和定位组。还会创建一个空的目标组，并将其分配给新 Cinemachine 相机的跟踪目标字段。",
+      "创建一个具有预选行为和扩展的 Cinemachine 相机，适合于角色中心的自由视角场景与用户输入。",
+      "创建一个具有预选位置行为和瞄准扩展的 Cinemachine 相机，适合于第三人称瞄准场景。第三人称瞄准相机是一个固定架构，由跟踪目标的旋转和位置驱动。不提供直接的用户控制。若要提供相机位置的用户控制，请选择自由视角相机。",
+      "创建一个具有预选位置构图行为的 Cinemachine 相机，适合于 2D 游戏场景。",
+      "创建一个默认的 Cinemachine 相机，不包含预选行为。可用于创建被动的 Cinemachine 相机，或者从头开始构建自定义的 Cinemachine 相机。该相机将被定位和旋转以匹配当前场景视图相机。",
+      "创建一个管理相机，将一组 Cinemachine 相机作为子对象，并根据指定的序列对它们进行处理。",
+      "创建一个具有预选行为的 Cinemachine 相机，使其沿着样条移动。还会创建一个样条并将其分配给相机。您可以修改此样条或替换为其他样条。",
+      "创建一个空的 GameObject，并将其 Transform 约束到样条上。可用于沿路径动画化任何 GameObject，或作为 Cinemachine 相机的跟踪目标。还会创建一个样条并将其分配给手推车。您可以修改此样条或替换为其他样条。",
+      "创建一个管理相机，将一组 Cinemachine 相机作为子对象，并根据指定的加权值提供连续混合。",
+      "创建一个管理相机，将一组 Cinemachine 相机作为子对象，并根据拍摄质量标准选择其中一个。"
+    ],
+    "note": "如果右键单击 GameObject 并创建其中一个定向相机，则新相机的“跟踪目标”将自动填充为您右键单击的对象。"
+  },
+  "SceneHandles": {
+    "title": "Cinemachine 控制柄工具栏",
+    "paragraphOne": "Cinemachine 控制柄工具栏是一组 3D 控件，允许您在场景视图中直观地操纵 CinemachineCamera 参数。您可以使用控制柄工具交互式地快速高效地调整选定对象的参数，而不是通过检查器控制它们。",
+    "paragraphTwo": "当您选择具有相关控制柄的 CinemachineCamera 类型时，工具栏会自动出现在场景视图工具栏覆盖层中。",
+    "handleToolsTitle": "控制柄工具",
+    "paragraphThree": "工具栏中提供以下四种控制柄工具：",
+    "fovTitle": "1. 视场 (FOV)",
+    "fovDescription": "FOV 工具可以根据用户选择调整垂直 FOV、水平 FOV、正交大小或焦距。它可以控制：",
+    "fovList": [
+      "当相机处于透视模式时，控制垂直或水平 FOV（取决于主相机中的选择）。",
+      "当相机处于正交模式时，控制正交大小。",
+      "当相机处于物理模式时，控制焦距。"
+    ],
+    "paragraphFour": "有关视场 (FOV) 属性的更多信息，请参见设置 CinemachineCamera 属性。",
+    "clipPlanesTitle": "2. 远/近剪辑面",
+    "paragraphFive": "您可以拖动点来增加远剪辑面和近剪辑面。",
+    "paragraphSix": "有关远剪辑面和近剪辑面属性的更多信息，请参见设置 CinemachineCamera 属性。",
+    "followOffsetTitle": "3. 跟随偏移",
+    "paragraphSeven": "跟随偏移是跟随目标的偏移量。您可以拖动点来增加或减少跟随偏移位置。",
+    "paragraphEight": "有关跟随偏移属性的更多信息，请参见轨道跟随属性。",
+    "trackedObjectOffsetTitle": "4. 跟踪对象偏移",
+    "paragraphNine": "这从相机放置的位置开始。您可以拖动点来增加或减少跟踪目标位置，当所需区域不是跟踪对象的中心时。",
+    "paragraphTen": "有关跟踪对象偏移属性的更多信息，请参见旋转作曲属性。"
+  },
+  "SavingInPlayMode": {
+    "title": "在运行模式下保存",
+    "paragraphOne": "在游戏运行时调整相机设置通常最为方便。但是，通常情况下，当您退出播放模式时，Unity 不会保存您对场景所做的更改。Cinemachine 具有一个特殊功能，可以保留您在播放模式期间所做的调整。它不会保存结构更改，例如添加或删除行为。除某些属性外，Cinemachine 在您退出播放模式时保留 CinemachineCameras 中的大多数设置。",
+    "paragraphTwo": "当您退出播放模式时，Cinemachine 会扫描场景以收集 CinemachineCameras 中的任何更改属性。Cinemachine 在退出后大约一秒钟保存这些更改。使用 编辑 > 撤销 命令可以还原这些更改。",
+    "paragraphThree": "在 Inspector 中选中任何 CinemachineCamera 的“在播放期间保存”以启用此功能。这是一个全局属性，而不是每个相机的属性，因此您只需选中或取消选中一次。",
+    "paragraphFour": "Cinemachine 组件具有特殊属性 [SaveDuringPlay] 以启用此功能。特定字段通过添加 [NoSaveDuringPlay] 属性被排除在保存期间。",
+    "paragraphFive": "您还可以在自己的自定义脚本中使用 [SaveDuringPlay] 和 [NoSaveDuringPlay]，以便为它们获得相同的功能。"
+  },
+
+  "TrackingScenario3D": {
+    "title": "3D跟踪场景",
+    "paragraphOne": "利用Cinemachine跟随和观察您的3D游戏中的活动角色",
+    "list": [
+      "跟踪和框定角色",
+      "跟踪和框定群组",
+      "创建自由视角相机",
+      "创建第三人称相机"
+    ]
+  },
+  "FollowFrameCharacter": {
+    "title": "跟踪并框选角色",
+    "paragraphOne": "创建和设置一个Cinemachine相机，自动跟踪并框选一个角色。",
+    "noteOne": "您的场景必须包含一个GameObject，您可以将其作为目标用Cinemachine相机进行跟踪。",
+    "subTitleOne": "添加一个“跟踪”Cinemachine相机",
+    "stepsOne": [
+      "在Unity菜单中，选择GameObject > Cinemachine > Targeted Cameras > Follow Camera。",
+      "验证Unity相机是否包含Cinemachine Brain组件。",
+      "在Inspector中，在Cinemachine Camera组件中，设置Tracking Target属性以指定要跟踪和查看的GameObject。"
+    ],
+    "stepsOneSubparagraph": "Unity添加了一个新的GameObject，其中包括：",
+    "stepsOneList": [
+      "一个Cinemachine Camera组件，",
+      "一个Cinemachine Follow组件，处理位置控制的Cinemachine相机行为，",
+      "一个Cinemachine Rotation Composer组件，处理旋转控制的Cinemachine相机行为。"
+    ],
+    "stepsThree": "CinemachineCamera始终自动将Unity相机相对于此GameObject进行定位，并旋转相机以查看此GameObject，即使您在场景中移动它。",
+    "noteTwo": "如果您通过右键点击要跟踪的GameObject来调用跟随相机菜单项，则新相机的“跟踪目标”将自动填充为您右键点击的对象。",
+    "subTitleTwo": "调整Cinemachine相机行为",
+    "paragraphTwoList": [
+      "使用Inspector访问Cinemachine Camera组件属性以进行进一步配置。",
+      "调整如下属性："
+    ],
+    "stepsTwo": [
+      "跟随偏移",
+      "跟随阻尼",
+      "屏幕组成",
+      "重新瞄准相机时使用的阻尼",
+      "镜头设置"
+    ]
+  },
+  "FollowFrameGroup": {
+    "title": "跟踪并框选一个组",
+    "paragraphOne": "使用 Cinemachine 目标组将多个变换视为单个跟踪目标。",
+    "paragraphTwo": "它还可以用作需要知道目标大小的程序行为的目标，例如组框架扩展。",
+    "subtitleOne": "创建目标组",
+    "ulListOne": ["向空 GameObject 添加 CinemachineTargetGroup 组件。"],
+    "subtitleTwo": "使用目标组创建新的 Cinemachine 相机",
+    "ulListTwo": [
+      "在 Unity 菜单中，选择 GameObject > Cinemachine > Targeted Cameras > Target Group Camera。"
+    ],
+    "paragraphThree": "Unity 将新的 CinemachineCamera 和目标组添加到场景中。CinemachineCamera 中的跟踪目标指的是新的目标组。",
+    "subTitleThree": "将现有的 CinemachineCamera 目标转换为目标组",
+    "ulListThree": [
+      "从 CinemachineCamera 检查器中跟踪目标字段右侧的弹出菜单中选择“转换为目标组”。这将创建一个新的目标组游戏对象，将当前目标添加到组中，并将 Cinemachine 相机的跟踪目标设置为该组。"
+    ],
+    "subtitleFour": "填充目标组",
+    "olListOne": [
+      "选择新的目标组对象。",
+      "在检查器中，点击 + 号向组中添加新项目。",
+      "在新项目中，分配一个 GameObject（您可以从层次结构中拖放），并编辑权重和半径属性。重要的是给目标一个非零的权重，否则它会被组忽略。",
+      "要向目标组添加更多的 GameObject，请重复步骤 2-3。"
+    ]
+  },
+  "FreeLookCamera": {
+    "title": "创建自由视角相机",
+    "paragraphOne": "在Cinemachine 3.0中，自由视角相机不再是以前版本中的单独类别。而是通过设置带有适当行为的CinemachineCamera来实现。",
+    "paragraphTwo": "自由视角相机是一种CinemachineCamera，用于跟踪游戏对象目标，并允许用户控制相机的视角。本质上，它是一种可以根据用户输入围绕目标旋转的相机。有几种可能的实现方式，每种方式都有其自身的行为风格和特点。您选择的方式将取决于目标移动的方式以及您想要的具体相机行为。认真思考您想让相机如何行为是很重要的。并没有一种适合所有情况的解决方案。",
+    "paragraphThree": "当您在GameObject菜单中选择Cinemachine > 自由视角相机时，默认情况下将创建一个具有以下组件的CinemachineCamera：",
+    "paragraphFour": "轨道跟随提供了轨道定位功能，旋转组合器确保相机始终从任何位置查看目标。用户输入由输入轴控制器组件提供。那里的设置将允许您将相机角度映射到您喜欢的任何输入控件，并调整它们的响应速度。",
+    "paragraphFive": "Cinemachine自由视角修饰器的作用是允许您根据相机的垂直视角调整一些设置。例如，您可以根据从顶部或底部查看的位置设置不同的镜头设置。该组件提供了许多不同的可能性，当然，您也可以自行设计并添加自定义设置。Cinemachine自由视角修饰器是一个可选组件，如果您不需要它提供的功能，可以将其删除。",
+    "paragraphSix": "通过将位置控制行为更改为位置组合器和旋转控制行为更改为平移，可以制作自由视角的另一种版本。",
+    "paragraphSeven": "在这种情况下，平移设置视角，位置组合器则使相机定位正确，以便目标正确显示在屏幕上。"
+  },
+  "ThirdPersonCamera": {
+    "title": "创建第三人称摄像机",
+    "paragraphOne": "虽然使用自由看摄像机创建第三人称摄像机可能是可能的，而且通常也是合适的，但在某些情况下，这种方式可能无法提供您所需的所有控制。例如，当您希望有肩膀上的偏移或精确的瞄准控制（例如在射击游戏中），并希望在混合到瞄准摄像机时保持该控制时，使用自由看摄像机可能难以保持所需的精度。",
+    "paragraphTwo": "为解决这个问题，Cinemachine提供了第三人称跟随行为。使用此行为的范例与自由看不同。具体来说，第三人称摄像机刚性地附着在跟踪目标上，为了调整摄像机的方向，您必须旋转目标本身。摄像机的前方方向将始终与目标的前方方向相匹配，即使摄像机从目标稍微偏移，正如在构架设置中指定的那样。",
+    "paragraphThree": "这意味着瞄准控制不是内置在摄像机中的，而必须由目标提供。通常，目标将是玩家的一个不可见的子对象，从而使玩家瞄准与玩家模型的旋转分离。请参阅Cinemachine示例，了解如何实现这一点的示例：",
+    "ulListOne": ["ThirdPersonWithAimMode", "ThirdPersonWithRoadieRun"],
+    "paragraphFour": "这些示例使用第三人称瞄准扩展，使用射线投射来确定摄像机瞄准的目标，并确保此点锁定到屏幕中心，即使摄像机上有过程噪声也是如此。"
+  },
+  "TopDownGamesAnd2DPage": {
+    "title": "2D和俯视视角游戏",
+    "paragraphOne": "使用和配置Cinemachine以满足2D游戏和俯视视角游戏的特定要求。",
+    "list": ["Cinemachine和2D图像", "Cinemachine和俯视视角游戏"]
+  },
+  "2DGraphics": {
+    "title": "2D 图形",
+    "paragraphOne": "Cinemachine 支持正交相机。当您将 Unity 相机的投影设置为正交时，Cinemachine 会进行调整以适应它。在 CinemachineCamera 的镜头属性中，FOV 被正交大小取代。请注意，与 FOV 相关的设置以及某些以 FOV 为导向的行为（如跟随缩放）如果相机是正交的，则没有效果。",
+    "paragraphTwo": "在正交环境中，旋转相机通常没有意义。因此，Cinemachine 提供位置作曲器来处理框架和构图，而无需旋转相机。",
+    "paragraphThree": "当主相机具有像素完美组件时，您可以向 CinemachineCamera 添加 Cinemachine 像素完美扩展，使其能够与像素完美环境很好地配合。",
+    "paragraphFour": "要将相机限制在 2D 世界的特定区域，您可以使用 Cinemachine Confiner 2D 扩展。"
+  },
+  "TopDownGames": {
+    "title": "俯视游戏",
+    "paragraphOne": "Cinemachine CinemachineCameras 模仿人类摄像师及其操作真实相机的方式。因此，它们对上下轴有敏感性，并且总是尽量避免在相机框架中引入滚动。由于这种敏感性，CinemachineCamera 避免长时间向上或向下看。它们可能会在经过时这样做，但如果目标长时间在正上方或正下方，它们将不总是给出理想的结果。",
+    "paragraphTwo": "如果您正在构建一个俯视游戏，其中相机直视下方，最佳做法是为相机重新定义上方向。您可以通过在 Cinemachine Brain 中将世界上方向覆盖设置为一个 GameObject 来实现此目的，该对象的本地上方向指向您希望 CinemachineCamera 的上方向通常所在的方向。此上方向的定义适用于由该 Cinemachine Brain 控制的所有 CinemachineCameras。"
+  },
+  "ConstrainCameraToPath": {
+    "title": "使相机沿路径移动",
+    "paragraphOne": "利用样条线约束相机沿着预定义且可自定义的路径移动。",
+    "paragraphTwo": "样条线路径由场景中的样条线形成。使用样条线指定固定路线来定位或动画CinemachineCamera。使用样条线推车行为让您的CinemachineCamera沿着样条线路径移动。",
+    "paragraphThree": "创建带有推车路径的Cinemachine相机：",
+    "pargraphThreeList": [
+      "在Unity菜单中，选择GameObject > Cinemachine > Dolly Camera with Spline。层次结构中将出现一个新的Cinemachine相机和样条线。",
+      "在层次结构窗口中，选择新的推车样条线GameObject。",
+      "在检视器或场景视图中添加和调整路径点。"
+    ],
+    "paragraphFour": "任何Unity样条线都可用作Cinemachine中的路径。只需将其拖放到Spline Dolly Spline属性字段中，即可使CinemachineCamera限制在样条线上。",
+    "paragraphFive": "默认情况下，Unity样条线不包含旋转数据。相机的旋转将根据任意点的样条线切线和世界Up向量进行推断。要在切线周围添加旋转，您可以使用Cinemachine样条线滚动行为。这允许您为样条线上的任何点指定滚动值。滚动值用于使相机绕该点的样条线切线旋转，从而更好地控制相机的最终旋转。",
+    "paragraphSix": "如果向样条线添加了Cinemachine样条线滚动行为，则所有使用该样条线的相机和推车都会看到它。或者，您可以将Cinemachine样条线滚动行为添加到Cinemachine相机本身，这样滚动值将仅适用于它。"
+  },
+
+  "ApplyNoiseSimulationPage": {
+    "title": "应用噪声模拟相机抖动",
+    "paragraphOne": "要将噪声行为应用于Cinemachine相机：",
+    "paragraphOneList": [
+      "在层次结构窗口中，选择您的Cinemachine相机。",
+      "在检视器窗口中，在Cinemachine相机组件中，选择Noise，然后选择Basic Multi Channel Perlin。这将向Cinemachine相机添加一个噪声行为。",
+      "在Basic Multi Channel Perlin组件下的Noise Profile中，选择现有的噪声配置文件资源或创建自己的配置文件。",
+      "使用Amplitude Gain和Frequency Gain来微调噪声。"
+    ],
+    "paragraphTwo": "噪声通常用于诸如手持相机效果等需要连续噪声的情况。对于突然的抖动（例如响应爆炸等事件），我们建议使用Impulse而不是Noise。"
+  },
+  "ManageGroupedCameras": {
+    "title": "管理分组相机",
+    "paragraphOne": "管理相机监督多个Cinemachine相机，但在Cinemachine Brain和时间轴的视角下，它们作为单个Cinemachine相机。",
+    "paragraphTwo": "Cinemachine包括以下管理相机：",
+    "paragraphTwoList": [
+      "序列相机：执行其子Cinemachine相机的混合或切换序列。",
+      "清晰镜头相机：选择最佳视角的子Cinemachine相机。",
+      "状态驱动相机：根据动画状态的变化选择子Cinemachine相机。",
+      "混合相机：通过使用最多八个子Cinemachine相机的加权平均值创建连续混合。"
+    ],
+    "paragraphThree": "由于管理相机的行为类似于普通的Cinemachine相机，因此您可以将它们嵌套。换句话说，您可以创建任意复杂的相机架构，将常规Cinemachine相机和管理相机结合在一起。",
+    "subtitleOne": "制作您自己的自定义管理相机",
+    "paragraphFour": "您还可以制作自己的管理相机，根据您提供的任意算法选择当前活动的子相机。例如，如果您正在制作一个2D平台游戏，并希望一个相机架构根据角色是向右移动还是向左移动，或者跳跃还是下落而对自身进行不同的定位，那么自定义CameraManager类可能是一个不错的选择。",
+    "paragraphFive": "为此，请创建一个新类，继承CinemachineCameraManagerBase。该基类实现了一组Cinemachine相机子级和混合器。",
+    "paragraphSix": "接下来，实现抽象的ChooseCurrentCamera方法。当管理器处于活动状态时，每帧都会调用此方法，并且应返回本帧应该处于活动状态的子相机。您的自定义类可以以任何方式做出此决定。在示例中，它将查看玩家状态以确定面对方向和跳跃/下落状态，并选择适当的子相机。",
+    "paragraphSeven": "如果新的期望相机与上一帧不同，则CinemachineCameraManagerBase将根据您在其DefaultBlend和CustomBlends字段中设置的内容启动混合。",
+    "paragraphEight": "添加了您喜欢的每个玩家状态的子相机，并将它们连接到您的管理器实例后，您将拥有一个根据玩家状态调整自身的Cinemachine架构。该架构本身对于系统的其他部分来说看起来就像一个普通的Cinemachine相机，因此可以在Cinemachine相机可以的任何地方使用 - 包括嵌套在其他架构中。",
+    "paragraphNine": "请注意，Cinemachine附带了状态驱动相机，它实现了此功能，前提是相关的玩家状态已编码在动画控制器状态机中。如果状态不是从动画控制器中读取，则需要自己实现管理器。",
+    "subtitleTwo": "托管的相机需要成为管理器的GameObject子级",
+    "paragraphTen": "这主要是为了防止嵌套管理器可能出现的问题，导致递归循环。强制托管相机成为子级使递归变得不可能。"
+  },
+  "AvoidCollisionsAndEvaluateShots": {
+    "title": "避免碰撞和评估镜头",
+    "paragraphOne": "当角色和物体在复杂的场景中移动时，场景中的障碍物有时会阻挡相机和其目标之间的视线。同样，您可能需要将相机移动到场景中另一个游戏对象已经占据的位置。Cinemachine提供了处理这些情况的扩展：",
+    "paragraphOneList": [
+      "Cinemachine 解碰撞器 (Decollider)",
+      "Cinemachine 解遮挡器 (Deoccluder)",
+      "Cinemachine 限制器 3D (Confiner 3D)",
+      "Cinemachine 限制器 2D (Confiner 2D)"
+    ]
+  },
+  "CinemachineEvents": {
+    "title": "Cinemachine 事件",
+    "paragraphOne": "每当相机被激活或停用时，以及在开始和结束混合时，Cinemachine都会生成事件。此外，当进行相机切换时（即在没有混合的情况下更改活动的Cinemachine相机），也会生成事件。",
+    "paragraphTwo": "当Cinemachine发送事件时，它会通过CinemachineCore全局发送。脚本可以添加监听器来监听这些事件并根据它们采取行动。监听器将接收所有相机的事件。",
+    "paragraphThree": "事件在管理混合的每个上下文中生成。这包括处理最高级别混合的CinemachineBrain，也适用于管理其子相机之间混合的Cinemachine管理相机。",
+    "paragraphFour": "有时需要仅为特定相机发送事件，以便脚本可以根据该特定相机的活动收到通知，而无需提供代码来过滤事件。Cinemachine提供以下行为来执行此过滤逻辑。",
+    "paragraphFourList": [
+      "通过向特定CinemachineCamera或ManagerCamera添加Cinemachine相机事件行为，可以捕捉与激活或停用该相机相关的事件。",
+      "通过向ManagerCamera添加Cinemachine相机管理器事件行为，可以捕捉由其生成的事件。",
+      "通过向特定CinemachineBrain添加Cinemachine脑事件行为，可以捕捉由其生成的事件。"
+    ]
+  },
+  "CinemachineImpulse": {
+    "title": "Cinemachine 脉冲（Impulse）",
+    "paragraphOne": "Cinemachine 脉冲会根据游戏事件生成和管理相机震动。例如，当一个游戏对象与另一个碰撞时，或者场景中某物爆炸时，可以使用脉冲使Cinemachine相机震动。",
+    "paragraphTwo": "脉冲由两部分组成：",
+    "paragraphThree": "1. 脉冲源：一个发射信号的组件，该信号从空间中的一个点发出并向外传播，类似于声波或冲击波。该发射由游戏中的事件触发。",
+    "paragraphFour": "信号包括一个方向和一条曲线，指定信号强度随时间变化的函数。这些共同定义了沿指定轴线的震动，持续指定的时间。这种震动从起点向外传播，当到达脉冲监听器的位置时，该监听器可以对此作出反应。",
+    "paragraphFive": "2. 脉冲监听器：一个Cinemachine扩展，允许Cinemachine相机“听到”脉冲，并通过震动作出反应。",
+    "paragraphSix": "可以将其理解为单个“脉冲”。脉冲是脉冲源发射信号的单次发生。场景中的碰撞和事件触发脉冲，脉冲源生成脉冲，脉冲监听器对脉冲作出反应。",
+    "subtitleOne": "开始使用脉冲",
+    "paragraphSeven": "在场景中设置和使用脉冲，请执行以下操作：",
+    "paragraphSevenList": [
+      "将Cinemachine脉冲源或Cinemachine碰撞脉冲源组件添加到一个或多个您希望触发相机震动的游戏对象上。",
+      "将Cinemachine脉冲监听器扩展添加到一个或多个Cinemachine相机上，使它们能够检测并对脉冲作出反应。"
+    ]
+  },
+  "SplitScreenMultipleCameras": {
+    "title": "分屏和多个Unity相机",
+    "paragraphOne": "根据设计，Cinemachine相机并不会直接链接到Cinemachine大脑。相反，场景中的活动Cinemachine相机会由大脑动态发现，这样它们就可以通过预制件实例化或场景加载来存在。默认情况下，如果场景中存在多个Cinemachine大脑，它们都会找到相同的Cinemachine相机，并因此显示相同的内容。要将特定的Cinemachine相机分配给特定的大脑，使用Cinemachine频道。这与Unity层的工作方式相同。",
+    "paragraphTwo": "首先，将您的Cinemachine相机设置为输出到所需的频道：",
+    "paragraphThree": "接下来，将该频道添加到Cinemachine大脑的频道掩码中。掩码中可以同时存在多个频道。Cinemachine大脑将仅使用那些输出到掩码中存在的频道的Cinemachine相机。所有其他Cinemachine相机将被忽略。"
+  },
+  "UseInputSystem": {
+    "title": "Cinemachine与输入系统兼容",
+    "paragraphOne": "对于更复杂的输入配置，例如支持多个设备，您需要从输入系统包提供的PlayerInput组件接收输入。以下部分假设您已经知道如何设置此组件。有关更多信息，请参阅输入系统文档和示例。",
+    "subtitleOne": "读取PlayerInput",
+    "paragraphTwo": "要从设置为InvokeCSharpEvents的PlayerInput中读取值，您需要创建一个自定义InputAxisController，该控制器订阅onActionTriggered事件。下面的示例显示了如何接收并相应地连接这些输入。将此脚本添加到您的CinemachineCamera中，并分配PlayerInput字段。",
+    "paragraphThree": "如果需要动态实例化相机，请参阅Cinemachine多相机文档和示例以获取更多信息。"
+  },
+  "KnownIssues": {
+    "title": "已知问题",
+    "subtitleOne": "累积缓冲投影矩阵",
+    "paragraphOne": "如果累积的“抗锯齿”选项已启用，并且场景中包含Cinemachine相机切换，则在切换后相机的视场将不正确。",
+    "paragraphTwo": "解决方法：在每一帧之后重置投影矩阵，在CinemachineBrain修改相机之后。"
+  },
+
+  "ComingSoom": {
+    "title": "敬请期待",
+    "paragraphOne": "当前页面还没有完成翻译和更新！如果您希望它尽快完成，请邮件提醒我们。",
+    "paragraphTwo": "您也可以贡献自己的力量，帮助Unity中文开发者社区完成这个页面，并通过PR提交您的翻译。"
+  },
+  "Feedback": {
+    "title": "对当前页面不满意？请给我们及时反馈！",
+    "buttonOne": "尽快翻译当前页面",
+    "buttonTwo": "该页面翻译有问题",
+    "buttonThree": "该页面功能缺失",
+    "sendFeedback": "提交反馈"
+  }
+}

@@ -1,0 +1,14 @@
+.FlexOne {
+  flex: 1;
+  margin-inline: 16px;
+}
+
+.FlexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.FlexCol {
+  display: flex;
+  flex-direction: column;
+}
